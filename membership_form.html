@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yzerfontein Social Tennis Club Membership Form</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 10px;
+            font-size: 9pt;
+            line-height: 1.2;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin: 0 0 15px 0;
+            font-size: 16pt;
+            font-weight: 300;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        .section {
+            margin-bottom: 8px;
+        }
+        .section-header {
+            background-color: #f8f9fa;
+            padding: 3px 8px;
+            margin-bottom: 5px;
+            border-left: 3px solid #3498db;
+            font-weight: 600;
+            font-size: 9pt;
+            color: #2c3e50;
+        }
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        .form-group {
+            flex: 1;
+        }
+        label {
+            display: block;
+            font-size: 8pt;
+            margin-bottom: 2px;
+            color: #666;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 3px;
+            border: 1px solid #666;
+            box-sizing: border-box;
+            font-size: 9pt;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        input[type="checkbox"] {
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            width: 12px;
+            height: 12px;
+            border: 1px solid #666;
+            background-color: white;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 9pt;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 6px;
+            font-size: 9pt;
+        }
+        th, td {
+            padding: 3px 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            padding: 4px;
+            border: 1px solid #ddd;
+            margin-bottom: 6px;
+            font-size: 8pt;
+        }
+        .banking-box {
+            border: 1px solid #ddd;
+            padding: 4px;
+            background-color: #f8f9fa;
+            margin-bottom: 6px;
+            font-size: 8pt;
+        }
+        .signature-line {
+            border-top: 1px solid #000;
+            margin-top: 10px;
+            width: 145px;
+            display: inline-block;
+            margin-bottom: 3px;
+        }
+        .signature-label {
+            font-size: 7pt;
+            color: #666;
+            text-align: center;
+            display: block;
+            margin-top: 1px;
+            line-height: 1.2;
+        }
+        ul {
+            margin: 0;
+            padding-left: 15px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        .two-columns {
+            display: flex;
+            gap: 15px;
+        }
+        .column {
+            flex: 1;
+        }
+        .fees-table td {
+            padding: 2px 5px;
+            font-size: 8pt;
+        }
+        .declaration {
+            font-size: 8pt;
+            margin: 4px 0 8px 0;
+            line-height: 1.2;
+        }
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        .logo {
+            height: 55px;
+            width: auto;
+        }
+        .title {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 14pt;
+            font-weight: 300;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 3px;
+        }
+        .signature-section {
+            margin-bottom: 8px;
+        }
+        .spouse-section {
+            background-color: #f0f8ff;
+            padding: 4px;
+            border: 1px solid #ddd;
+            margin: 4px 0;
+            border-radius: 3px;
+        }
+        .spouse-header {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 8pt;
+        }
+        .social-note {
+            font-size: 8pt;
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="ytc_logo.png" alt="Yzerfontein Social Tennis Club Logo" class="logo">
+        <h1 class="title">Yzerfontein Social Tennis Club<br>Membership Application Form</h1>
+    </div>
+
+    <div class="section">
+        <div class="section-header">Personal Information</div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" autocomplete="off">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="idNumber">ID Number</label>
+                <input type="text" id="idNumber" name="idNumber" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" autocomplete="off">
+            </div>
+        </div>
+        <div class="form-group" style="margin-bottom: 6px;">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" autocomplete="off">
+        </div>
+        <div class="form-group" style="margin-bottom: 6px;">
+            <label for="address">Street Address</label>
+            <input type="text" id="address" name="address" autocomplete="off">
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" autocomplete="off">
+            </div>
+            <div class="form-group" style="flex: 0.5;">
+                <label for="postcode">Postcode</label>
+                <input type="text" id="postcode" name="postcode" autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <div class="spouse-section">
+        <div class="spouse-header">Spouse Information (for Married Couple membership)</div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="spouseFirstName">Spouse First Name</label>
+                <input type="text" id="spouseFirstName" name="spouseFirstName" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="spouseLastName">Spouse Last Name</label>
+                <input type="text" id="spouseLastName" name="spouseLastName" autocomplete="off">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="spouseIdNumber">Spouse ID Number</label>
+                <input type="text" id="spouseIdNumber" name="spouseIdNumber" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="spousePhone">Spouse Phone Number</label>
+                <input type="text" id="spousePhone" name="spousePhone" autocomplete="off">
+            </div>
+        </div>
+    </div>
+
+    <div class="two-columns">
+        <div class="column">
+            <div class="section">
+                <div class="section-header">Membership Categories 2025/2026</div>
+                <table>
+                    <tr>
+                        <th style="width: 30px"></th>
+                        <th>Category</th>
+                        <th>Fee</th>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="membershipType" value="married" autocomplete="off"></td>
+                        <td>Married Couple</td>
+                        <td>R350</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="membershipType" value="single" autocomplete="off"></td>
+                        <td>Single</td>
+                        <td>R250</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="membershipType" value="pensioner" autocomplete="off"></td>
+                        <td>Pensioner</td>
+                        <td>R200</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="membershipType" value="junior" autocomplete="off"></td>
+                        <td>Junior (under 18)</td>
+                        <td>R150</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="membershipType" value="social" autocomplete="off"></td>
+                        <td>Social Member</td>
+                        <td>R120</td>
+                    </tr>
+                </table>
+                <div class="social-note">
+                    A social member is an individual who wishes to remain involved in the club's community and governance, including voting rights and participation in off-court social events, but no longer takes part in on-court activities such as playing or accessing the courts.
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="section">
+                <div class="section-header">Additional Fees</div>
+                
+                <div style="font-weight: 600; color: #2c3e50; margin-bottom: 4px;">Saturday Social Tennis (Club-organised sessions)</div>
+                <table class="fees-table" style="margin-bottom: 2px;">
+                    <tr>
+                        <td>Club Members (ball fee)</td>
+                        <td>R30.00 per session</td>
+                    </tr>
+                    <tr>
+                        <td>Guests</td>
+                        <td>R60.00 per session</td>
+                    </tr>
+                </table>
+                <p style="font-size: 7pt; margin: 0 0 8px 0; font-style: italic;">Guest fee includes R30 guest fee + R30 ball fee</p>
+
+                <div style="font-weight: 600; color: #2c3e50; margin-bottom: 2px;">Member Court Use (Outside Social Tennis)</div>
+                <table class="fees-table" style="margin-bottom: 2px;">
+                    <tr>
+                        <td>Members</td>
+                        <td>Free of charge</td>
+                    </tr>
+                    <tr>
+                        <td>Guests playing with a member</td>
+                        <td>R30.00 per guest per session</td>
+                    </tr>
+                </table>
+
+                <div style="font-weight: 600; color: #2c3e50; margin-bottom: 2px;">Court Bookings (Non-Members, Outside Social Sessions)</div>
+                <table class="fees-table" style="margin-bottom: 2px;">
+                    <tr>
+                        <td>2 Players (2 hours)</td>
+                        <td>R100.00</td>
+                    </tr>
+                    <tr>
+                        <td>4 Players (2 hours)</td>
+                        <td>R200.00</td>
+                    </tr>
+                    <tr>
+                        <td>Refundable key deposit</td>
+                        <td>R100.00</td>
+                    </tr>
+                </table>
+                <p style="font-size: 7pt; font-style: italic; margin: 0 0 8px 0;">Must be booked in advance. Usage subject to club rules.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">Important Notes</div>
+        <div class="info-box">
+            <ul>
+                <li><b>Membership of the Yzerfontein Sport and Recreation Club (YSRC) is mandatory</b>. A separate application form must be completed (see attached). You may include the YSRC fee with your YTC payment; the YTC Treasurer will transfer the amount to YSRC on your behalf.</li>
+                <li>Membership fees apply to the full 2025/2026 season (1 March 2025 to 28 February 2026). Fees are fixed for the season; no pro-rata rates will be offered.</li>
+                <li>Children under 12 may not play without adult supervision.</li>
+                <li>All members and guests must adhere to club rules.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">Declaration</div>
+        <p class="declaration">
+            <strong>POPIA consent:</strong> By completing this form, I/we consent to YSRC lawfully processing my personal information in accordance with privacy regulations.
+        </p>
+        <p class="declaration">
+            <strong>Indemnity:</strong> I/we acknowledge that participation in all Yzerfontein Tennis Club activities is at my/our own risk. I/we hereby indemnify and hold harmless the Yzerfontein Tennis Club, its committee, members, volunteers, and the Yzerfontein Sport and Recreation Club from any claim, loss, injury, damage, or liability arising from my/our participation in any club-related activity, on or off the premises, including where negligence may be alleged.
+        </p>
+        <div class="form-row">
+            <div class="form-group" style="flex: 1; text-align: center;">
+                <div class="signature-line"></div>
+                <span class="signature-label">Signature<br>(Parent/Guardian if Junior)</span>
+            </div>
+            <div class="form-group" style="flex: 1; text-align: center;">
+                <div class="signature-line"></div>
+                <span class="signature-label">Spouse Signature<br>(if Married Couple)</span>
+            </div>
+            <div class="form-group" style="flex: 1; text-align: center;">
+                <div class="signature-line"></div>
+                <span class="signature-label">Date</span>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="two-columns">
+        <div class="column">
+            <div class="section">
+                <div class="section-header">Banking Details</div>
+                <div class="banking-box">
+                    <p style="margin: 0;">
+                        <strong>Yzerfontein Tennis Club</strong><br>
+                        Nedbank Limited (Current Account)<br>
+                        Account Number: 125 355 5680<br>
+                        Branch Code: 198 765<br>
+                        Reference: Name and Surname
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="section">
+                <div class="section-header">Contact Info</div>
+                <div class="banking-box">
+                    <p style="margin: 0;">
+                        <strong>Faan Oosthuizen</strong> (Treasurer)<br>
+                        Email: info@yzerfonteintennis.co.za
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
