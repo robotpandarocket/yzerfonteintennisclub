@@ -115,6 +115,36 @@
             color: white;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2c3e50;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
         /* Main Content */
         main {
             padding: 40px 0;
@@ -313,15 +343,44 @@
                 font-size: 1rem;
             }
 
-            .nav-links {
-                flex-direction: column;
-                gap: 5px;
+            /* Mobile Navigation */
+            .nav-container {
+                justify-content: space-between;
+                align-items: center;
                 padding: 10px 0;
             }
 
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
             .nav-links a {
-                padding: 12px 15px;
-                font-size: 1rem;
+                padding: 15px 20px;
+                border-bottom: 1px solid #eee;
+                border-radius: 0;
+                text-align: left;
+            }
+
+            .nav-links a:hover {
+                background-color: #f8f9fa;
+                color: #2c3e50;
             }
 
             .section {
@@ -512,7 +571,12 @@
     <nav>
         <div class="container">
             <div class="nav-container">
-                <ul class="nav-links">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#social-tennis">Social Tennis</a></li>
                     <li><a href="#court-info">Court Info</a></li>
@@ -779,6 +843,23 @@
     </footer>
 
     <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
