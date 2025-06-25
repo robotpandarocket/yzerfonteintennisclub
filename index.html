@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yzerfontein Social Tennis Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -586,6 +587,14 @@
             margin-top: 20px;
         }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
         .social-link {
             display: inline-block;
             margin: 0 10px;
@@ -602,6 +611,49 @@
             width: 24px;
             height: 24px;
             vertical-align: middle;
+        }
+
+        .whatsapp-updates {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #25d366;
+        }
+
+        .whatsapp-updates h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .whatsapp-updates p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25d366;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .whatsapp-link:hover {
+            background: #128c7e;
+            color: white;
+            text-decoration: none;
+        }
+
+        .whatsapp-link i {
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -685,6 +737,15 @@
                     <h4>Guests</h4>
                     <p>R60 per session (includes R30 guest fee + R30 ball fee)</p>
                 </div>
+            </div>
+
+            <div class="whatsapp-updates">
+                <h4>Stay Updated</h4>
+                <p>Join our WhatsApp group for social tennis updates and cancellations</p>
+                <a href="https://chat.whatsapp.com/IhcewY4VZBHIixEa4oq9LA" target="_blank" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Join WhatsApp Group</span>
+                </a>
             </div>
         </section>
 
@@ -880,12 +941,26 @@
 
             <div class="social-media">
                 <h4>Follow Us</h4>
-                <a href="https://www.facebook.com/yzerfonteinsocialtennisclub/" target="_blank" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                    <span>Facebook</span>
-                </a>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/yzerfonteinsocialtennisclub/" target="_blank" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>YTSC (Tennis)</span>
+                    </a>
+                    <a href="https://www.facebook.com/yzerfonteinsportsklub.yzerfontein" target="_blank" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>YSRC (Main Sportsclub)</span>
+                    </a>
+                    <a href="https://yzersportclub.co.za/" target="_blank" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        <span>YSRC Website</span>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
