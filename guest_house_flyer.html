@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yzerfontein Tennis Club - Guest Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @media print {
+            @page {
+                size: A5;
+                margin: 5mm;
+            }
+            body {
+                width: 100% !important;
+                height: 100% !important;
+                overflow: visible !important;
+                padding: 0 !important;
+            }
+            .container {
+                width: 100% !important;
+                height: auto !important;
+                border: 2px solid #000 !important;
+                box-shadow: none !important;
+            }
+            .qr-code {
+                border: 2px solid #000 !important;
+                background: white !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            color: #333;
+            width: 148mm;
+            height: 210mm;
+            margin: 0 auto;
+            padding: 5mm;
+        }
+
+        .container {
+            background: white;
+            height: 200mm;
+            width: 138mm;
+            border: 2px solid #000;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            height: 32px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        .header-text {
+            flex: 1;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .subtitle {
+            font-size: 0.7rem;
+            color: white;
+            font-weight: 400;
+        }
+
+        .intro {
+            background: white;
+            padding: 8px 12px;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            color: #333;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .section {
+            background: white;
+            padding: 0;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .section:last-child {
+            margin-bottom: 8px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #d1d5db;
+            margin: 8px auto;
+            width: 80%;
+        }
+
+        .section h2 {
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            color: #2c3e50;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .section h3 {
+            font-size: 0.75rem;
+            margin: 6px 0 3px 0;
+            color: #34495e;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .section p {
+            font-size: 0.65rem;
+            line-height: 1.3;
+            margin-bottom: 3px;
+            color: #333;
+            text-align: center;
+        }
+
+        .highlight-box {
+            background: white;
+            padding: 0;
+            margin: 6px 0;
+            text-align: center;
+        }
+
+        .highlight-box h4 {
+            font-size: 0.7rem;
+            margin-bottom: 3px;
+            color: #2c3e50;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .time {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .day {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .rates-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin: 6px 0;
+            justify-items: center;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .rate-item {
+            background: white;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .rate-item h4 {
+            font-size: 0.65rem;
+            margin-bottom: 2px;
+            color: #2c3e50;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .rate-item p {
+            font-size: 0.6rem;
+            margin-bottom: 1px;
+            text-align: center;
+        }
+
+        .booking-info {
+            background: white;
+            padding: 0;
+            margin: 6px 0;
+            text-align: center;
+        }
+
+        .booking-info h4 {
+            font-size: 0.65rem;
+            margin-bottom: 2px;
+            color: #2c3e50;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .booking-info p {
+            font-size: 0.6rem;
+            margin-bottom: 1px;
+            color: #34495e;
+            text-align: center;
+        }
+
+        .membership-hint {
+            background: white;
+            padding: 0;
+            text-align: center;
+            margin: 6px 0;
+        }
+
+        .membership-hint h4 {
+            font-size: 0.7rem;
+            margin-bottom: 3px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .membership-hint p {
+            font-size: 0.65rem;
+            color: #34495e;
+            margin-bottom: 3px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 3px 0;
+            text-align: center;
+        }
+
+        .feature-list li {
+            padding: 1px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            font-size: 0.6rem;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 0.6rem;
+        }
+
+        .footer {
+            background: white;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            border-top: 2px solid #2c3e50;
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .qr-section {
+            text-align: center;
+        }
+
+        .qr-section h4 {
+            font-size: 0.65rem;
+            margin-bottom: 4px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .qr-code {
+            width: 90px;
+            height: 90px;
+            border: 2px solid #000;
+            border-radius: 6px;
+            padding: 3px;
+            background: white;
+            margin-bottom: 6px;
+        }
+
+        .website-link {
+            font-size: 0.6rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .icon {
+            font-size: 0.6rem;
+            color: #2c3e50;
+        }
+
+        .whatsapp-icon {
+            color: #25d366;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="ytc_logo.png" alt="Yzerfontein Tennis Club Logo" class="logo">
+            <div class="header-text">
+                <h1 class="title">Yzerfontein Tennis Club</h1>
+                <p class="subtitle">Tennis for Everyone - Visitors Welcome!</p>
+            </div>
+        </div>
+
+        <div class="intro">
+            Join our friendly community for social tennis, casual play, and the joy of the game in our beautiful coastal setting. We provide a welcoming, well-maintained space for both residents and visitors to enjoy tennis in a relaxed, social atmosphere.
+        </div>
+
+        <hr>
+
+        <div class="main-content">
+            <div class="section">
+                <h2><i class="fas fa-calendar-alt icon"></i> Social Tennis - Every Saturday</h2>
+                <p><strong class="day">Saturdays</strong></p>
+                <p><strong class="time">09:30 - 11:30</strong></p>
+                <p>Join our friendly social tennis session - perfect for visitors!</p>
+                
+                <div class="highlight-box">
+                    <h4>🎾 What to Expect</h4>
+                    <ul class="feature-list">
+                        <li>No booking required - just turn up!</li>
+                        <li>Friendly, mixed-ability play</li>
+                        <li>Bring your own racquet</li>
+                        <li>Great way to meet locals</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="section">
+                <h2><i class="fas fa-credit-card icon"></i> Visitor Rates</h2>
+                
+                <div class="rates-grid">
+                    <div class="rate-item">
+                        <h4>Social Tennis</h4>
+                        <p><strong>R60</strong></p>
+                        <p><em>Guest fee + ball fee</em></p>
+                    </div>
+                    <div class="rate-item">
+                        <h4>Court Booking</h4>
+                        <p><strong>R100</strong> (2 players)</p>
+                        <p><strong>R200</strong> (4 players)</p>
+                        <p><em>+ R200 key deposit</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="section">
+                <h2><i class="fas fa-phone icon"></i> How to Book</h2>
+                <p>Call or visit the sports club to reserve your court time</p>
+                
+                <div class="booking-info">
+                    <h4>Yzerfontein Sports & Recreation Club</h4>
+                    <p>Cnr Buitekant & Beach Rd</p>
+                    <p><strong>Phone:</strong> 022 451 2819</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="section">
+                <h2><i class="fas fa-star icon"></i> Want More Than Casual Play?</h2>
+                
+                <div class="membership-hint">
+                    <p>Become a member and enjoy free court access, reduced social tennis rates and socials</p>
+                    <br>
+                    <p><strong>More Info:</strong> www.yzerfonteintennis.co.za</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="qr-section">
+                <h4><i class="fab fa-whatsapp whatsapp-icon"></i> Scan to join our WhatsApp group</h4>
+                <img src="wa-public-qr-code.svg" alt="WhatsApp QR Code" class="qr-code">
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
