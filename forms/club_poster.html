@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yzerfontein Social Tennis Club - Poster</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @page {
+            size: A3 portrait;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 297mm;
+            height: 420mm;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .poster {
+            width: 287mm;
+            height: 410mm;
+            background: white;
+            border: 3px solid #0494b6;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0494b6 0%, #0384a3 100%);
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            height: 75px;
+            width: auto;
+        }
+
+        .header-text h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .header-text p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            height: 160mm;
+            background: url('../img/drone1.jpeg');
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-height: 0;
+        }
+
+        .about-section {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 5px solid #0494b6;
+        }
+
+        .about-text {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .about-text p {
+            margin-bottom: 12px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-text strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        /* Two-column layout for social tennis and membership */
+        .two-column-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Social Tennis Section - using guest house flyer layout */
+        .social-section {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 5px solid #0494b6;
+            text-align: center;
+        }
+
+        .social-title {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .social-time {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 6px;
+        }
+
+        .social-day {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 6px;
+        }
+
+        .social-description {
+            font-size: 0.85rem;
+            color: #333;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .social-highlight {
+            background: #e9ecef;
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .social-highlight h4 {
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 6px 0;
+            text-align: center;
+        }
+
+        .feature-list li {
+            padding: 2px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: #333;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .membership-section {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 6px;
+            border-left: 5px solid #0494b6;
+        }
+
+        .membership-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .membership-text {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .membership-text p {
+            margin-bottom: 10px;
+        }
+
+        .membership-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .website-info {
+            background: #e9ecef;
+            padding: 12px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            background: #f8f9fa;
+            padding: 18px;
+            border-radius: 6px;
+            text-align: center;
+            border-left: 5px solid #25d366;
+            margin-top: auto;
+        }
+
+        .qr-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .whatsapp-icon {
+            font-size: 1rem;
+            color: #25d366;
+        }
+
+        .qr-code {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        @media print {
+            body {
+                width: 297mm;
+                height: 420mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Header -->
+        <div class="header">
+            <img src="../img/ytc_logo.png" alt="Yzerfontein Tennis Club Logo" class="logo">
+            <div class="header-text">
+                <h1>Yzerfontein Social Tennis Club</h1>
+                <p>Keeping tennis thriving in Yzerfontein for the long term</p>
+            </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="hero-image"></div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- About Section -->
+            <div class="about-section">
+                <div class="about-text">
+                    <p>Yzerfontein Tennis Club was formally established in September 2022 by a group of local players who wanted to make tennis more accessible, enjoyable, and part of daily life in our town. What began with just ten members has grown into a small but active club, open to both residents and visitors.</p>
+                    
+                    <p>We don't aim to be a large or competitive club. Our focus is on creating a space that's easy to be part of, welcoming to all, and simple to keep running for the long term. Whether you play regularly or just now and then, you're invited to take part — especially if you're new to tennis, new to town, or returning to the game after some time away.</p>
+                    
+                    <p>In July 2025, our courts were officially reopened after a full resurfacing. This upgrade was made possible through the hard work of the previous committee, the support of our members, and a partnership with the Yzerfontein Sport and Recreation Club and the local municipality. The new courts have already brought new energy to the club and are an asset we're proud to look after.</p>
+                    
+                    <p>We support weekly social tennis, encourage casual and private play, and welcome visitors while looking after the needs of our local members. Membership fees are kept as low as possible to keep tennis accessible to everyone.</p>
+                </div>
+            </div>
+
+            <!-- Two-column layout -->
+            <div class="two-column-section">
+                <!-- Social Tennis Section - using guest house flyer layout -->
+                <div class="social-section">
+                    <h2 class="social-title">
+                        Social Tennis
+                    </h2>
+                    <p class="social-day"><strong>Saturdays 09:30 - 11:30</strong></p>
+                    <p class="social-description">Join our friendly social tennis session - perfect for visitors!</p>
+                    
+                    <div class="social-highlight">
+                        <h4>🎾 What to Expect</h4>
+                        <ul class="feature-list">
+                            <li>No booking required - just turn up!</li>
+                            <li>Friendly, mixed-ability play</li>
+                            <li>Bring your own racquet</li>
+                            <li>Great way to meet locals</li>
+                        </ul>
+                        <p style="margin-top: 6px; font-size: 0.85rem;">
+                            <strong>Members R30 • Guests R60</strong><br>
+                            (includes guest fee and balls)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Membership Section -->
+                <div class="membership-section">
+                    <h2 class="social-title">Court Access and Membership</h2>
+                    <div class="membership-text">
+                        <p>Our courts are available for both members and visitors, with bookings handled through the Yzerfontein Sport and Recreation Club.</p>
+                        <p>By becoming a member, you enjoy free court access, reduced social tennis fees and have access to all club events.</p>
+                        <p>It's a great way to meet people, stay active, and be part of our growing tennis community.</p>
+                    </div>
+                    <div class="website-info">
+                        For more information visit yzerfonteintennis.co.za<br>
+                        or enquire at the Sport & Recreation Club reception.
+                    </div>
+                </div>
+            </div>
+
+            <!-- QR Code Section -->
+            <div class="qr-section">
+                <div class="qr-header">
+                    <i class="fab fa-whatsapp whatsapp-icon"></i>
+                    <span>Scan to join our Public WhatsApp Group</span>
+                </div>
+                <img src="../img/wa-public-qr-code.png" alt="WhatsApp QR Code" class="qr-code">
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
