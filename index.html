@@ -690,6 +690,24 @@
             color: white !important;
             text-decoration: none;
         }
+
+        /* Events iframe container */
+        .events-iframe-container {
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+            max-height: 800px;
+            overflow: hidden;
+        }
+
+        .events-iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -720,6 +738,7 @@
                     <li><a href="#bookings">Bookings</a></li>
                     <li><a href="#membership">Membership</a></li>
                     <li><a href="blog/">Blog</a></li>
+                    <li><a href="#events">Events</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -946,6 +965,13 @@
                         <a href="https://drive.google.com/uc?export=download&id=1xwT6E7IQ6Vpjs_Gla8AdfF9sSZVr-xmn" target="_blank" style="display: inline-block; background: #27ae60; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: 500; transition: background-color 0.3s ease;">Download PDF</a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="events" class="section">
+            <h2>Upcoming Events</h2>
+            <div class="events-iframe-container">
+                <iframe src='https://widgets.sociablekit.com/facebook-page-events/iframe/25572874' frameborder='0' width='100%' height='600' scrolling='no'></iframe>
             </div>
         </section>
 
