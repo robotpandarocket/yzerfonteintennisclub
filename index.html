@@ -708,6 +708,336 @@
             height: 100%;
             border: none;
         }
+
+        /* Membership Wizard Styles */
+        .wizard-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0494b6, #0384a3);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(4, 148, 182, 0.3);
+        }
+
+        .wizard-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(4, 148, 182, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        .wizard-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .wizard-modal {
+            background: white;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .wizard-header {
+            background: linear-gradient(135deg, #0494b6, #0384a3);
+            color: white;
+            padding: 25px 30px;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+        }
+
+        .wizard-header h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .wizard-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .wizard-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .wizard-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .wizard-content {
+            padding: 30px;
+        }
+
+        .wizard-step {
+            display: none;
+        }
+
+        .wizard-step.active {
+            display: block;
+        }
+
+        .wizard-question {
+            margin-bottom: 25px;
+        }
+
+        .wizard-question h4 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .wizard-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .wizard-option {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .wizard-option:hover {
+            border-color: #0494b6;
+            background: #f8f9fa;
+        }
+
+        .wizard-option.selected {
+            border-color: #0494b6;
+            background: #e3f2fd;
+        }
+
+        .wizard-option input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+
+        .wizard-option input[type="checkbox"] {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+
+        .wizard-option label {
+            cursor: pointer;
+            font-weight: 500;
+            color: #2c3e50;
+            flex: 1;
+        }
+
+        .wizard-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .wizard-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .wizard-btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .wizard-btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .wizard-btn-primary {
+            background: #0494b6;
+            color: white;
+        }
+
+        .wizard-btn-primary:hover {
+            background: #0384a3;
+        }
+
+        .wizard-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .wizard-progress {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .wizard-progress-step {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e9ecef;
+            margin: 0 5px;
+            transition: background 0.3s ease;
+        }
+
+        .wizard-progress-step.active {
+            background: #0494b6;
+        }
+
+        .wizard-progress-step.completed {
+            background: #28a745;
+        }
+
+        .wizard-results {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .wizard-results h4 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .wizard-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .wizard-table th {
+            background: #0494b6;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .wizard-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .wizard-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .wizard-table .total-row {
+            background: #e3f2fd;
+            font-weight: 600;
+        }
+
+        .wizard-forms {
+            margin-top: 25px;
+        }
+
+        .wizard-forms h5 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .wizard-forms ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .wizard-forms li {
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .wizard-forms .highlight {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .wizard-modal {
+                width: 95%;
+                margin: 20px;
+            }
+
+            .wizard-content {
+                padding: 20px;
+            }
+
+            .wizard-header {
+                padding: 20px;
+            }
+
+            .wizard-header h3 {
+                font-size: 1.3rem;
+            }
+
+            .wizard-navigation {
+                flex-direction: column;
+            }
+
+            .wizard-btn {
+                width: 100%;
+            }
+
+            .wizard-table {
+                font-size: 0.9rem;
+            }
+
+            .wizard-table th,
+            .wizard-table td {
+                padding: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -906,6 +1236,10 @@
             <p>Joining the club gives you full access to the courts, discounted social tennis, and a chance to take part in regular socials and community events. Since we're part of the Yzerfontein Sports and Recreation Club (YSRC), you'll need to be a member there too — with added perks across the wider club.</p>
 
             <h3>Membership Categories & Annual Fees (2025/2026 Season)</h3>
+            <p>Not sure what to pay? Use our membership wizard to calculate your fees and see exactly which forms you need to fill in.</p>
+            <button class="wizard-button" onclick="openMembershipWizard()">
+                <i class="fas fa-calculator"></i> Membership Fee Calculator
+            </button>
             <table>
                 <thead>
                     <tr>
@@ -1045,6 +1379,144 @@
         </div>
     </footer>
 
+    <!-- Membership Wizard Modal -->
+    <div class="wizard-overlay" id="wizardOverlay">
+        <div class="wizard-modal">
+            <div class="wizard-header">
+                <button class="wizard-close" onclick="closeMembershipWizard()">&times;</button>
+                <h3>Membership Fee Calculator</h3>
+                <p>Let's calculate your fees step by step</p>
+            </div>
+            <div class="wizard-content">
+                <div class="wizard-progress" id="wizardProgress">
+                    <div class="wizard-progress-step active"></div>
+                    <div class="wizard-progress-step"></div>
+                    <div class="wizard-progress-step"></div>
+                    <div class="wizard-progress-step"></div>
+                    <div class="wizard-progress-step"></div>
+                    <div class="wizard-progress-step"></div>
+                </div>
+
+                <!-- Step 1: Individual or Couple -->
+                <div class="wizard-step active" id="step1">
+                    <div class="wizard-question">
+                        <h4>Are you joining on your own, or with your partner?</h4>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'individual')">
+                                <input type="radio" name="membershipType" value="individual" id="individual">
+                                <label for="individual">Just me</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'couple')">
+                                <input type="radio" name="membershipType" value="couple" id="couple">
+                                <label for="couple">Me and my partner</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Your Age -->
+                <div class="wizard-step" id="step2">
+                    <div class="wizard-question">
+                        <h4>Are you 60 or older?</h4>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'under60')">
+                                <input type="radio" name="yourAge" value="under60" id="yourUnder60">
+                                <label for="yourUnder60">No, I'm under 60</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'over60')">
+                                <input type="radio" name="yourAge" value="over60" id="yourOver60">
+                                <label for="yourOver60">Yes, I'm 60 or older</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Partner Age (if couple) -->
+                <div class="wizard-step" id="step3">
+                    <div class="wizard-question">
+                        <h4>Is your partner 60 or older?</h4>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'partnerUnder60')">
+                                <input type="radio" name="partnerAge" value="under60" id="partnerUnder60">
+                                <label for="partnerUnder60">No, my partner is under 60</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'partnerOver60')">
+                                <input type="radio" name="partnerAge" value="over60" id="partnerOver60">
+                                <label for="partnerOver60">Yes, my partner is 60 or older</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Children -->
+                <div class="wizard-step" id="step4">
+                    <div class="wizard-question">
+                        <h4>Are you adding children under 18?</h4>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'noChildren')">
+                                <input type="radio" name="children" value="0" id="noChildren">
+                                <label for="noChildren">No children</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, '1')">
+                                <input type="radio" name="children" value="1" id="oneChild">
+                                <label for="oneChild">1 child</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, '2')">
+                                <input type="radio" name="children" value="2" id="twoChildren">
+                                <label for="twoChildren">2 children</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, '3')">
+                                <input type="radio" name="children" value="3" id="threeChildren">
+                                <label for="threeChildren">3 children</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, '4')">
+                                <input type="radio" name="children" value="4" id="fourPlusChildren">
+                                <label for="fourPlusChildren">4 or more children</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: YSRC Membership -->
+                <div class="wizard-step" id="step5">
+                    <div class="wizard-question">
+                        <h4>YSRC Sports Club Membership</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">For each person, are they already a member of the YSRC Sports Club? If yes, have they paid this year's fee?</p>
+                        <div id="ysrcMembershipOptions"></div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Bowls Membership -->
+                <div class="wizard-step" id="step6">
+                    <div class="wizard-question">
+                        <h4>Bowls Club Membership</h4>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">For YSRC members only: Are you also a member of the Bowls Club? (R100 discount if yes, R50 discount if no)</p>
+                        <div id="bowlsMembershipOptions"></div>
+                    </div>
+                </div>
+
+                <!-- Results Step -->
+                <div class="wizard-step" id="results">
+                                    <div class="wizard-results">
+                    <h4>💰 Your Fee Summary</h4>
+                    <div id="feeTable"></div>
+                    <div id="membershipSummary"></div>
+                    
+                    <div class="wizard-forms">
+                        <h5>📝 Forms to Fill In</h5>
+                        <div id="formsList"></div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="wizard-navigation">
+                    <button class="wizard-btn wizard-btn-secondary" id="prevBtn" onclick="previousStep()" style="display: none;">Previous</button>
+                    <button class="wizard-btn wizard-btn-primary" id="nextBtn" onclick="nextStep()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Hamburger menu functionality
         const hamburger = document.getElementById('hamburger');
@@ -1097,6 +1569,813 @@
                     link.classList.add('active');
                 }
             });
+        });
+
+        // Membership Wizard JavaScript
+        let currentStep = 1;
+        let wizardData = {
+            membershipType: '',
+            yourAge: '',
+            partnerAge: '',
+            children: 0,
+            ysrcMembers: [], // Array of who is already a member
+            ysrcPaid: [], // Array of who has paid current season fee
+            bowlsMembers: [] // Array of who is a bowls member
+        };
+
+        function openMembershipWizard() {
+            document.getElementById('wizardOverlay').style.display = 'flex';
+            resetWizard();
+        }
+
+        function closeMembershipWizard() {
+            document.getElementById('wizardOverlay').style.display = 'none';
+        }
+
+        function resetWizard() {
+            currentStep = 1;
+            wizardData = {
+                membershipType: '',
+                yourAge: '',
+                partnerAge: '',
+                children: 0,
+                ysrcMembers: [],
+                ysrcPaid: [],
+                bowlsMembers: []
+            };
+            
+            // Reset all inputs
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => checkbox.checked = false);
+            document.querySelectorAll('.wizard-option').forEach(option => option.classList.remove('selected'));
+            
+            // Show first step
+            showStep(1);
+            updateProgress();
+        }
+
+        function selectOption(element, value) {
+            // Remove selected class from all options in this group
+            const options = element.parentElement.querySelectorAll('.wizard-option');
+            options.forEach(option => option.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            element.classList.add('selected');
+            
+            // Update wizard data based on the step
+            const step = currentStep;
+            if (step === 1) {
+                wizardData.membershipType = value;
+            } else if (step === 2) {
+                wizardData.yourAge = value;
+            } else if (step === 3) {
+                wizardData.partnerAge = value;
+            } else if (step === 4) {
+                wizardData.children = parseInt(value);
+                console.log('Set children count to:', wizardData.children, 'from value:', value);
+            } else if (step === 5) {
+                // Handle YSRC membership selection
+                const person = element.getAttribute('data-person');
+                const question = element.getAttribute('data-question');
+                const isYes = value === 'yes';
+                
+                if (question === 'member') {
+                    if (isYes) {
+                        if (!wizardData.ysrcMembers.includes(person)) {
+                            wizardData.ysrcMembers.push(person);
+                        }
+                        // Show paid section for this person
+                        const paidSection = document.getElementById(`${person}PaidSection`);
+                        if (paidSection) {
+                            paidSection.style.display = 'block';
+                        }
+                    } else {
+                        wizardData.ysrcMembers = wizardData.ysrcMembers.filter(m => m !== person);
+                        wizardData.ysrcPaid = wizardData.ysrcPaid.filter(m => m !== person);
+                        // Hide paid section for this person
+                        const paidSection = document.getElementById(`${person}PaidSection`);
+                        if (paidSection) {
+                            paidSection.style.display = 'none';
+                        }
+                    }
+                } else if (question === 'paid') {
+                    if (isYes) {
+                        if (!wizardData.ysrcPaid.includes(person)) {
+                            wizardData.ysrcPaid.push(person);
+                        }
+                    } else {
+                        wizardData.ysrcPaid = wizardData.ysrcPaid.filter(m => m !== person);
+                    }
+                }
+            } else if (step === 6) {
+                // Handle bowls membership selection
+                const person = element.getAttribute('data-person');
+                const question = element.getAttribute('data-question');
+                const isYes = value === 'yes';
+                
+                if (question === 'bowls') {
+                    if (isYes) {
+                        if (!wizardData.bowlsMembers.includes(person)) {
+                            wizardData.bowlsMembers.push(person);
+                        }
+                    } else {
+                        wizardData.bowlsMembers = wizardData.bowlsMembers.filter(m => m !== person);
+                    }
+                }
+            }
+        }
+
+        function generateYSRCMembershipOptions() {
+            const container = document.getElementById('ysrcMembershipOptions');
+            let html = '';
+            
+            console.log('Generating YSRC options. Children count:', wizardData.children);
+            
+            // Always include the main person
+            html += `
+                <div style="margin-bottom: 25px;">
+                    <h5 style="color: #2c3e50; margin-bottom: 10px;">You:</h5>
+                    <div class="wizard-options">
+                        <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="member">
+                            <input type="radio" name="youMember" value="yes" id="youMemberYes">
+                            <label for="youMemberYes">Yes</label>
+                        </div>
+                        <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="member">
+                            <input type="radio" name="youMember" value="no" id="youMemberNo">
+                            <label for="youMemberNo">No</label>
+                        </div>
+                    </div>
+                    <div id="youPaidSection" style="display: none; margin-top: 10px;">
+                        <h6 style="color: #666; margin-bottom: 8px;">Have you paid the 2025/2026 season fee?</h6>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="paid">
+                                <input type="radio" name="youPaid" value="yes" id="youPaidYes">
+                                <label for="youPaidYes">Yes</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="paid">
+                                <input type="radio" name="youPaid" value="no" id="youPaidNo">
+                                <label for="youPaidNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Include partner if couple
+            if (wizardData.membershipType === 'couple') {
+                html += `
+                    <div style="margin-bottom: 25px;">
+                        <h5 style="color: #2c3e50; margin-bottom: 10px;">Partner:</h5>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="member">
+                                <input type="radio" name="partnerMember" value="yes" id="partnerMemberYes">
+                                <label for="partnerMemberYes">Yes</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="member">
+                                <input type="radio" name="partnerMember" value="no" id="partnerMemberNo">
+                                <label for="partnerMemberNo">No</label>
+                            </div>
+                        </div>
+                        <div id="partnerPaidSection" style="display: none; margin-top: 10px;">
+                            <h6 style="color: #666; margin-bottom: 8px;">Has your partner paid the 2025/2026 season fee?</h6>
+                            <div class="wizard-options">
+                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="paid">
+                                    <input type="radio" name="partnerPaid" value="yes" id="partnerPaidYes">
+                                    <label for="partnerPaidYes">Yes</label>
+                                </div>
+                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="paid">
+                                    <input type="radio" name="partnerPaid" value="no" id="partnerPaidNo">
+                                    <label for="partnerPaidNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Include children if any
+            console.log('About to generate children HTML. Children count:', wizardData.children);
+            for (let i = 1; i <= wizardData.children; i++) {
+                console.log('Generating HTML for Child', i);
+                html += `
+                    <div style="margin-bottom: 25px;">
+                        <h5 style="color: #2c3e50; margin-bottom: 10px;">Child ${i}:</h5>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="member">
+                                <input type="radio" name="child${i}Member" value="yes" id="child${i}MemberYes">
+                                <label for="child${i}MemberYes">Yes</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="member">
+                                <input type="radio" name="child${i}Member" value="no" id="child${i}MemberNo">
+                                <label for="child${i}MemberNo">No</label>
+                            </div>
+                        </div>
+                        <div id="child${i}PaidSection" style="display: none; margin-top: 10px;">
+                            <h6 style="color: #666; margin-bottom: 8px;">Has Child ${i} paid the 2025/2026 season fee?</h6>
+                            <div class="wizard-options">
+                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="paid">
+                                    <input type="radio" name="child${i}Paid" value="yes" id="child${i}PaidYes">
+                                    <label for="child${i}PaidYes">Yes</label>
+                                </div>
+                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="paid">
+                                    <input type="radio" name="child${i}Paid" value="no" id="child${i}PaidNo">
+                                    <label for="child${i}PaidNo">No</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            console.log('Final HTML length:', html.length);
+            container.innerHTML = html;
+        }
+
+        function generateBowlsMembershipOptions() {
+            const container = document.getElementById('bowlsMembershipOptions');
+            let html = '';
+            
+            // Only include the main person if they are a YSRC member
+            if (wizardData.ysrcMembers.includes('you')) {
+                html += `
+                    <div style="margin-bottom: 25px;">
+                        <h5 style="color: #2c3e50; margin-bottom: 10px;">You:</h5>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="bowls">
+                                <input type="radio" name="youBowls" value="yes" id="youBowlsYes">
+                                <label for="youBowlsYes">Yes, I'm a bowls member</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="bowls">
+                                <input type="radio" name="youBowls" value="no" id="youBowlsNo">
+                                <label for="youBowlsNo">No, I'm not a bowls member</label>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Include partner if couple AND partner is a YSRC member
+            if (wizardData.membershipType === 'couple' && wizardData.ysrcMembers.includes('partner')) {
+                html += `
+                    <div style="margin-bottom: 25px;">
+                        <h5 style="color: #2c3e50; margin-bottom: 10px;">Partner:</h5>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="bowls">
+                                <input type="radio" name="partnerBowls" value="yes" id="partnerBowlsYes">
+                                <label for="partnerBowlsYes">Yes, my partner is a bowls member</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="bowls">
+                                <input type="radio" name="partnerBowls" value="no" id="partnerBowlsNo">
+                                <label for="partnerBowlsNo">No, my partner is not a bowls member</label>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Include children if any AND they are YSRC members
+            for (let i = 1; i <= wizardData.children; i++) {
+                if (wizardData.ysrcMembers.includes(`child${i}`)) {
+                    html += `
+                        <div style="margin-bottom: 25px;">
+                            <h5 style="color: #2c3e50; margin-bottom: 10px;">Child ${i}:</h5>
+                            <div class="wizard-options">
+                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="bowls">
+                                    <input type="radio" name="child${i}Bowls" value="yes" id="child${i}BowlsYes">
+                                    <label for="child${i}BowlsYes">Yes, Child ${i} is a bowls member</label>
+                                </div>
+                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="bowls">
+                                    <input type="radio" name="child${i}Bowls" value="no" id="child${i}BowlsNo">
+                                    <label for="child${i}BowlsNo">No, Child ${i} is not a bowls member</label>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            
+            container.innerHTML = html;
+        }
+
+
+
+        function nextStep() {
+            if (currentStep === 6) {
+                calculateResults();
+                showStep('results');
+            } else {
+                // Validate current step
+                if (!validateCurrentStep()) {
+                    return;
+                }
+                
+                // Skip step 3 if individual membership
+                if (currentStep === 2 && wizardData.membershipType === 'individual') {
+                    currentStep = 4;
+                } else if (currentStep === 3 && wizardData.membershipType === 'individual') {
+                    currentStep = 4;
+                } else {
+                    currentStep++;
+                }
+                
+                showStep(currentStep);
+            }
+            updateProgress();
+        }
+
+        function previousStep() {
+            if (currentStep === 'results') {
+                currentStep = 6;
+            } else if (currentStep === 4 && wizardData.membershipType === 'individual') {
+                currentStep = 2;
+            } else {
+                currentStep--;
+            }
+            
+            showStep(currentStep);
+            updateProgress();
+        }
+
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.wizard-step').forEach(stepEl => {
+                stepEl.classList.remove('active');
+            });
+            
+            // Show current step
+            if (step === 'results') {
+                document.getElementById('results').classList.add('active');
+                document.getElementById('nextBtn').style.display = 'none';
+                document.getElementById('prevBtn').style.display = 'inline-block';
+            } else {
+                document.getElementById(`step${step}`).classList.add('active');
+                document.getElementById('nextBtn').style.display = 'inline-block';
+                document.getElementById('prevBtn').style.display = step > 1 ? 'inline-block' : 'none';
+                
+                // Generate options when showing specific steps
+                if (step === 5) {
+                    console.log('Showing step 5, calling generateYSRCMembershipOptions');
+                    generateYSRCMembershipOptions();
+                } else if (step === 6) {
+                    console.log('Showing step 6, calling generateBowlsMembershipOptions');
+                    generateBowlsMembershipOptions();
+                }
+            }
+        }
+
+        function validateCurrentStep() {
+            const step = currentStep;
+            
+            if (step === 1 && !wizardData.membershipType) {
+                alert('Please select whether you are joining individually or as a couple.');
+                return false;
+            }
+            if (step === 2 && !wizardData.yourAge) {
+                alert('Please select your age category.');
+                return false;
+            }
+            if (step === 3 && wizardData.membershipType === 'couple' && !wizardData.partnerAge) {
+                alert('Please select your partner\'s age category.');
+                return false;
+            }
+            if (step === 4 && wizardData.children === undefined) {
+                alert('Please select the number of children.');
+                return false;
+            }
+            if (step === 5) {
+                // Check that each person has answered the membership question
+                const people = ['you'];
+                if (wizardData.membershipType === 'couple') {
+                    people.push('partner');
+                }
+                for (let i = 1; i <= wizardData.children; i++) {
+                    people.push(`child${i}`);
+                }
+                
+                // Check if all people have answered the membership question
+                for (const person of people) {
+                    const yesRadio = document.getElementById(`${person}MemberYes`);
+                    const noRadio = document.getElementById(`${person}MemberNo`);
+                    if (!yesRadio.checked && !noRadio.checked) {
+                        alert(`Please select YSRC membership status for ${person === 'you' ? 'you' : person === 'partner' ? 'your partner' : `Child ${person.replace('child', '')}`}.`);
+                        return false;
+                    }
+                }
+                
+                // Check that members have answered the paid question
+                for (const person of wizardData.ysrcMembers) {
+                    const yesRadio = document.getElementById(`${person}PaidYes`);
+                    const noRadio = document.getElementById(`${person}PaidNo`);
+                    if (!yesRadio.checked && !noRadio.checked) {
+                        alert(`Please select whether ${person === 'you' ? 'you have' : person === 'partner' ? 'your partner has' : `Child ${person.replace('child', '')} has`} paid the 2025/2026 season fee.`);
+                        return false;
+                    }
+                }
+                return true;
+            }
+            if (step === 6) {
+                // Check that each YSRC member has answered the bowls membership question
+                const people = [];
+                if (wizardData.ysrcMembers.includes('you')) {
+                    people.push('you');
+                }
+                if (wizardData.membershipType === 'couple' && wizardData.ysrcMembers.includes('partner')) {
+                    people.push('partner');
+                }
+                for (let i = 1; i <= wizardData.children; i++) {
+                    if (wizardData.ysrcMembers.includes(`child${i}`)) {
+                        people.push(`child${i}`);
+                    }
+                }
+                
+                // Check if all YSRC members have answered the bowls membership question
+                for (const person of people) {
+                    const yesRadio = document.getElementById(`${person}BowlsYes`);
+                    const noRadio = document.getElementById(`${person}BowlsNo`);
+                    if (!yesRadio.checked && !noRadio.checked) {
+                        alert(`Please select bowls membership status for ${person === 'you' ? 'you' : person === 'partner' ? 'your partner' : `Child ${person.replace('child', '')}`}.`);
+                        return false;
+                    }
+                }
+                return true;
+            }
+            
+            return true;
+        }
+
+        function updateProgress() {
+            const progressSteps = document.querySelectorAll('.wizard-progress-step');
+            progressSteps.forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                if (index + 1 < currentStep) {
+                    step.classList.add('completed');
+                } else if (index + 1 === currentStep) {
+                    step.classList.add('active');
+                }
+            });
+        }
+
+        function calculateResults() {
+            const results = calculateFees();
+            displayResults(results);
+        }
+
+        function calculateFees() {
+            const people = [];
+            let totalTennisFee = 0;
+            let totalYSRCFee = 0;
+            let totalJoiningFee = 0;
+            let totalDiscount = 0;
+
+            // Calculate fees for main person
+            const mainPerson = {
+                name: 'You',
+                tennisFee: wizardData.membershipType === 'couple' ? 350 : calculateTennisFee(wizardData.yourAge, 'single'),
+                ysrcFee: calculateYSRCFee(wizardData.yourAge, 'you'),
+                joiningFee: calculateJoiningFee('you'),
+                discount: calculateDiscount(wizardData.bowlsMembers, 'you')
+            };
+            people.push(mainPerson);
+
+            // Calculate fees for partner if couple
+            if (wizardData.membershipType === 'couple') {
+                const partnerPerson = {
+                    name: 'Partner',
+                    tennisFee: 0, // Partner gets free tennis as part of couple membership
+                    ysrcFee: calculateYSRCFee(wizardData.partnerAge, 'partner'),
+                    joiningFee: calculateJoiningFee('partner'),
+                    discount: calculateDiscount(wizardData.bowlsMembers, 'partner')
+                };
+                people.push(partnerPerson);
+            }
+
+            // Calculate fees for children
+            for (let i = 1; i <= wizardData.children; i++) {
+                const childPerson = {
+                    name: `Child ${i}`,
+                    tennisFee: 150, // Junior fee
+                    ysrcFee: calculateYSRCFee('junior', `child${i}`),
+                    joiningFee: calculateJoiningFee(`child${i}`),
+                    discount: calculateDiscount(wizardData.bowlsMembers, `child${i}`)
+                };
+                people.push(childPerson);
+            }
+
+            // Calculate totals
+            people.forEach(person => {
+                totalTennisFee += person.tennisFee;
+                totalYSRCFee += person.ysrcFee;
+                totalJoiningFee += person.joiningFee;
+                totalDiscount += person.discount;
+            });
+
+            return {
+                people: people,
+                totalTennisFee: totalTennisFee,
+                totalYSRCFee: totalYSRCFee,
+                totalJoiningFee: totalJoiningFee,
+                totalDiscount: totalDiscount,
+                grandTotal: totalTennisFee + totalYSRCFee + totalJoiningFee - totalDiscount
+            };
+        }
+
+        function calculateTennisFee(age, type) {
+            if (age === 'over60') return 200;
+            return 250; // Default adult fee
+        }
+
+        function calculateYSRCFee(age, person) {
+            // If not a member, they need to pay the annual fee
+            if (!wizardData.ysrcMembers.includes(person)) {
+                if (age === 'over60') return 250;
+                if (age === 'junior') return 150;
+                return 350; // Default adult fee
+            }
+            
+            // If they are a member but haven't paid current season, they need to pay
+            if (!wizardData.ysrcPaid.includes(person)) {
+                if (age === 'over60') return 250;
+                if (age === 'junior') return 150;
+                return 350; // Default adult fee
+            }
+            
+            // If they are a member and have paid current season, no fee
+            return 0;
+        }
+
+        function calculateJoiningFee(person) {
+            // Check if this person is already a YSRC member
+            if (wizardData.ysrcMembers.includes(person)) {
+                return 0; // Already a member
+            }
+            return 250; // Joining fee for new members
+        }
+
+        function calculateDiscount(bowlsMembers, person) {
+            // Check if this person is a bowls member
+            const isBowlsMember = bowlsMembers.includes(person);
+            
+            // Check if this person is paying YSRC fees (not a member or hasn't paid current season)
+            const isPayingYSRC = !wizardData.ysrcMembers.includes(person) || 
+                                (wizardData.ysrcMembers.includes(person) && !wizardData.ysrcPaid.includes(person));
+            
+            // Only apply discount if they're actually paying YSRC fees
+            if (!isPayingYSRC) {
+                return 0; // No discount if they're not paying YSRC fees
+            }
+            
+            if (isBowlsMember) {
+                // Bowls membership gives R100 discount
+                return 100;
+            } else {
+                // If not a bowls member, they get R50 discount for tennis club membership
+                return 50;
+            }
+        }
+
+        function displayResults(results) {
+            // Create fee table
+            let tableHTML = `
+                <table class="wizard-table">
+                    <thead>
+                        <tr>
+                            <th>Person</th>
+                            <th>Tennis Fee</th>
+                            <th>YSRC Fee</th>
+                            <th>Joining Fee</th>
+                            <th>Discount</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            results.people.forEach(person => {
+                const personTotal = person.tennisFee + person.ysrcFee + person.joiningFee - person.discount;
+                tableHTML += `
+                    <tr>
+                        <td>${person.name}</td>
+                        <td>R${person.tennisFee}</td>
+                        <td>R${person.ysrcFee}</td>
+                        <td>R${person.joiningFee}</td>
+                        <td>-R${person.discount}</td>
+                        <td>R${personTotal}</td>
+                    </tr>
+                `;
+            });
+
+            tableHTML += `
+                    <tr class="total-row">
+                        <td><strong>TOTAL</strong></td>
+                        <td><strong>R${results.totalTennisFee}</strong></td>
+                        <td><strong>R${results.totalYSRCFee}</strong></td>
+                        <td><strong>R${results.totalJoiningFee}</strong></td>
+                        <td><strong>-R${results.totalDiscount}</strong></td>
+                        <td><strong>R${results.grandTotal}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            `;
+
+            document.getElementById('feeTable').innerHTML = tableHTML;
+
+            // Create membership summary
+            let summaryHTML = '<div style="margin-top: 25px; background: #f8f9fa; border-radius: 8px; padding: 20px;"><h5 style="color: #2c3e50; margin-bottom: 15px;">📋 Your Membership Summary</h5>';
+            
+            // Membership type
+            if (wizardData.membershipType === 'couple') {
+                summaryHTML += '<div style="margin-bottom: 15px;"><strong>Membership Type:</strong> Couple (You + Partner)</div>';
+            } else {
+                summaryHTML += '<div style="margin-bottom: 15px;"><strong>Membership Type:</strong> Individual</div>';
+            }
+            
+            // Family members
+            summaryHTML += '<div style="margin-bottom: 15px;"><strong>Family Members:</strong><ul style="margin: 10px 0 0 20px;">';
+            summaryHTML += '<li>You (Adult)</li>';
+            if (wizardData.membershipType === 'couple') {
+                summaryHTML += '<li>Partner (Adult)</li>';
+            }
+            for (let i = 1; i <= wizardData.children; i++) {
+                summaryHTML += `<li>Child ${i} (Junior)</li>`;
+            }
+            summaryHTML += '</ul></div>';
+            
+            // YSRC membership status
+            summaryHTML += '<div style="margin-bottom: 15px;"><strong>YSRC Membership Status:</strong><ul style="margin: 10px 0 0 20px;">';
+            if (wizardData.ysrcMembers.includes('you')) {
+                summaryHTML += '<li>You: YSRC Member';
+                if (wizardData.ysrcPaid.includes('you')) {
+                    summaryHTML += ' (Paid 2025/2026 fee)';
+                } else {
+                    summaryHTML += ' (Needs to pay 2025/2026 fee)';
+                }
+                summaryHTML += '</li>';
+            } else {
+                summaryHTML += '<li>You: Not a YSRC member (needs to join)</li>';
+            }
+            
+            if (wizardData.membershipType === 'couple') {
+                if (wizardData.ysrcMembers.includes('partner')) {
+                    summaryHTML += '<li>Partner: YSRC Member';
+                    if (wizardData.ysrcPaid.includes('partner')) {
+                        summaryHTML += ' (Paid 2025/2026 fee)';
+                    } else {
+                        summaryHTML += ' (Needs to pay 2025/2026 fee)';
+                    }
+                    summaryHTML += '</li>';
+                } else {
+                    summaryHTML += '<li>Partner: Not a YSRC member (needs to join)</li>';
+                }
+            }
+            
+            for (let i = 1; i <= wizardData.children; i++) {
+                if (wizardData.ysrcMembers.includes(`child${i}`)) {
+                    summaryHTML += `<li>Child ${i}: YSRC Member`;
+                    if (wizardData.ysrcPaid.includes(`child${i}`)) {
+                        summaryHTML += ' (Paid 2025/2026 fee)';
+                    } else {
+                        summaryHTML += ' (Needs to pay 2025/2026 fee)';
+                    }
+                    summaryHTML += '</li>';
+                } else {
+                    summaryHTML += `<li>Child ${i}: Not a YSRC member (needs to join)</li>`;
+                }
+            }
+            summaryHTML += '</ul></div>';
+            
+            // Bowls membership status (only for YSRC members)
+            let bowlsMembers = [];
+            if (wizardData.ysrcMembers.includes('you') && wizardData.bowlsMembers.includes('you')) {
+                bowlsMembers.push('You');
+            }
+            if (wizardData.membershipType === 'couple' && wizardData.ysrcMembers.includes('partner') && wizardData.bowlsMembers.includes('partner')) {
+                bowlsMembers.push('Partner');
+            }
+            for (let i = 1; i <= wizardData.children; i++) {
+                if (wizardData.ysrcMembers.includes(`child${i}`) && wizardData.bowlsMembers.includes(`child${i}`)) {
+                    bowlsMembers.push(`Child ${i}`);
+                }
+            }
+            
+            if (bowlsMembers.length > 0) {
+                summaryHTML += '<div style="margin-bottom: 15px;"><strong>Bowls Club Members:</strong> ' + bowlsMembers.join(', ') + '</div>';
+            }
+            
+            summaryHTML += '</div>';
+            
+            document.getElementById('membershipSummary').innerHTML = summaryHTML;
+
+            // Create forms list with clear visual indicators
+            let formsHTML = '<div style="margin-top: 30px;">';
+            
+            // YSTC Tennis Club Forms
+            formsHTML += '<div style="margin-bottom: 25px;"><h5 style="color: #2c3e50; margin-bottom: 15px;">🎾 YSTC Tennis Club Forms:</h5>';
+            
+            // Show each person who needs a tennis form
+            if (wizardData.membershipType === 'couple') {
+                formsHTML += `
+                    <div style="background: #e8f5e8; border: 2px solid #4caf50; border-radius: 8px; padding: 15px; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="background: #4caf50; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">REQUIRED</span>
+                            <strong>You & Partner:</strong> YSTC Membership Form (shared couple form)
+                        </div>
+                    </div>
+                `;
+            } else {
+                formsHTML += `
+                    <div style="background: #e8f5e8; border: 2px solid #4caf50; border-radius: 8px; padding: 15px; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="background: #4caf50; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">REQUIRED</span>
+                            <strong>You:</strong> YSTC Membership Form
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Show children who need forms
+            for (let i = 1; i <= wizardData.children; i++) {
+                formsHTML += `
+                    <div style="background: #e8f5e8; border: 2px solid #4caf50; border-radius: 8px; padding: 15px; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="background: #4caf50; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">REQUIRED</span>
+                            <strong>Child ${i}:</strong> YSTC Membership Form
+                        </div>
+                    </div>
+                `;
+            }
+            
+                            // Download buttons for tennis forms
+                formsHTML += `
+                    <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>Download YSTC Membership Forms:</strong>
+                        <div style="margin-top: 10px;">
+                            <a href="forms/membership_form.html" target="_blank" style="display: inline-block; background: #4caf50; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: 500; margin-right: 10px;">Fill Online Form</a>
+                            <a href="https://drive.google.com/uc?export=download&id=1xwT6E7IQ6Vpjs_Gla8AdfF9sSZVr-xmn" target="_blank" style="display: inline-block; background: #2196f3; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: 500;">Download PDF</a>
+                        </div>
+                    </div>
+                `;
+            
+            formsHTML += '</div>';
+            
+            // YSRC Club Forms
+            formsHTML += '<div><h5 style="color: #2c3e50; margin-bottom: 15px;">🏟️ YSRC Club Forms:</h5>';
+            
+            let ysrcFormsNeeded = false;
+            let ysrcFormsCount = 0;
+            let ysrcPeopleList = [];
+            
+            results.people.forEach(person => {
+                // Only require YSRC form if they need to pay joining fee (not already a member)
+                if (person.joiningFee > 0) {
+                    ysrcFormsNeeded = true;
+                    ysrcFormsCount++;
+                    ysrcPeopleList.push(person.name);
+                }
+            });
+            
+            if (ysrcFormsNeeded) {
+                // Show each person who needs a YSRC form
+                ysrcPeopleList.forEach(personName => {
+                    formsHTML += `
+                        <div style="background: #e8f5e8; border: 2px solid #4caf50; border-radius: 8px; padding: 15px; margin-bottom: 10px;">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <span style="background: #4caf50; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">REQUIRED</span>
+                                <strong>${personName}:</strong> YSRC Application Form
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // Download button for YSRC forms
+                formsHTML += `
+                    <div style="margin-top: 15px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <strong>Download YSRC Application Forms:</strong>
+                        <div style="margin-top: 10px;">
+                            <a href="https://docs.google.com/document/d/1vnLIhdmD81VhKJrJtrxHX1ECj14rYvvY/edit?usp=sharing&ouid=114896354047198025305&rtpof=true&sd=true" target="_blank" style="display: inline-block; background: #ff9800; color: white; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-weight: 500;">Download YSRC Form</a>
+                        </div>
+                    </div>
+                `;
+            } else {
+                formsHTML += `
+                    <div style="background: #f0f0f0; border: 2px solid #ccc; border-radius: 8px; padding: 15px; margin-bottom: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="background: #6c757d; color: white; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">NOT NEEDED</span>
+                            <strong>No YSRC forms required</strong> - everyone is already a member
+                        </div>
+                    </div>
+                `;
+            }
+            
+            formsHTML += '</div></div>';
+            
+            document.getElementById('formsList').innerHTML = formsHTML;
+        }
+
+        // Close wizard when clicking outside
+        document.getElementById('wizardOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMembershipWizard();
+            }
         });
     </script>
 </body>
