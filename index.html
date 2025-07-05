@@ -1693,28 +1693,31 @@
             
             // Always include the main person
             html += `
-                <div style="margin-bottom: 25px;">
-                    <h5 style="color: #2c3e50; margin-bottom: 10px;">You:</h5>
-                    <div class="wizard-options">
-                        <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="member">
-                            <input type="radio" name="youMember" value="yes" id="youMemberYes">
-                            <label for="youMemberYes">Yes</label>
-                        </div>
-                        <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="member">
-                            <input type="radio" name="youMember" value="no" id="youMemberNo">
-                            <label for="youMemberNo">No</label>
+                <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0494b6;">
+                    <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👤 You</h5>
+                    <div style="margin-bottom: 15px;">
+                        <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Are you already a YSRC member?</h6>
+                        <div class="wizard-options">
+                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="member">
+                                <input type="radio" name="youMember" value="yes" id="youMemberYes">
+                                <label for="youMemberYes">Yes, I'm already a YSRC member</label>
+                            </div>
+                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="member">
+                                <input type="radio" name="youMember" value="no" id="youMemberNo">
+                                <label for="youMemberNo">No, I need to join YSRC</label>
+                            </div>
                         </div>
                     </div>
-                    <div id="youPaidSection" style="display: none; margin-top: 10px;">
-                        <h6 style="color: #666; margin-bottom: 8px;">Have you paid the 2025/2026 season fee?</h6>
+                    <div id="youPaidSection" style="display: none;">
+                        <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Have you paid the 2025/2026 season fee?</h6>
                         <div class="wizard-options">
                             <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="paid">
                                 <input type="radio" name="youPaid" value="yes" id="youPaidYes">
-                                <label for="youPaidYes">Yes</label>
+                                <label for="youPaidYes">Yes, I've paid this year's fee</label>
                             </div>
                             <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="paid">
                                 <input type="radio" name="youPaid" value="no" id="youPaidNo">
-                                <label for="youPaidNo">No</label>
+                                <label for="youPaidNo">No, I need to pay this year's fee</label>
                             </div>
                         </div>
                     </div>
@@ -1724,28 +1727,31 @@
             // Include partner if couple
             if (wizardData.membershipType === 'couple') {
                 html += `
-                    <div style="margin-bottom: 25px;">
-                        <h5 style="color: #2c3e50; margin-bottom: 10px;">Partner:</h5>
-                        <div class="wizard-options">
-                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="member">
-                                <input type="radio" name="partnerMember" value="yes" id="partnerMemberYes">
-                                <label for="partnerMemberYes">Yes</label>
-                            </div>
-                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="member">
-                                <input type="radio" name="partnerMember" value="no" id="partnerMemberNo">
-                                <label for="partnerMemberNo">No</label>
+                    <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👥 Partner</h5>
+                        <div style="margin-bottom: 15px;">
+                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Is your partner already a YSRC member?</h6>
+                            <div class="wizard-options">
+                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="member">
+                                    <input type="radio" name="partnerMember" value="yes" id="partnerMemberYes">
+                                    <label for="partnerMemberYes">Yes, my partner is already a YSRC member</label>
+                                </div>
+                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="member">
+                                    <input type="radio" name="partnerMember" value="no" id="partnerMemberNo">
+                                    <label for="partnerMemberNo">No, my partner needs to join YSRC</label>
+                                </div>
                             </div>
                         </div>
-                        <div id="partnerPaidSection" style="display: none; margin-top: 10px;">
-                            <h6 style="color: #666; margin-bottom: 8px;">Has your partner paid the 2025/2026 season fee?</h6>
+                        <div id="partnerPaidSection" style="display: none;">
+                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Has your partner paid the 2025/2026 season fee?</h6>
                             <div class="wizard-options">
                                 <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="paid">
                                     <input type="radio" name="partnerPaid" value="yes" id="partnerPaidYes">
-                                    <label for="partnerPaidYes">Yes</label>
+                                    <label for="partnerPaidYes">Yes, my partner has paid this year's fee</label>
                                 </div>
                                 <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="paid">
                                     <input type="radio" name="partnerPaid" value="no" id="partnerPaidNo">
-                                    <label for="partnerPaidNo">No</label>
+                                    <label for="partnerPaidNo">No, my partner needs to pay this year's fee</label>
                                 </div>
                             </div>
                         </div>
@@ -1757,29 +1763,35 @@
             console.log('About to generate children HTML. Children count:', wizardData.children);
             for (let i = 1; i <= wizardData.children; i++) {
                 console.log('Generating HTML for Child', i);
+                const childColors = ['#27ae60', '#f39c12', '#9b59b6', '#e67e22']; // Different colors for each child
+                const childColor = childColors[(i - 1) % childColors.length];
+                
                 html += `
-                    <div style="margin-bottom: 25px;">
-                        <h5 style="color: #2c3e50; margin-bottom: 10px;">Child ${i}:</h5>
-                        <div class="wizard-options">
-                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="member">
-                                <input type="radio" name="child${i}Member" value="yes" id="child${i}MemberYes">
-                                <label for="child${i}MemberYes">Yes</label>
-                            </div>
-                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="member">
-                                <input type="radio" name="child${i}Member" value="no" id="child${i}MemberNo">
-                                <label for="child${i}MemberNo">No</label>
+                    <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${childColor};">
+                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👶 Child ${i}</h5>
+                        <div style="margin-bottom: 15px;">
+                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Is Child ${i} already a YSRC member?</h6>
+                            <div class="wizard-options">
+                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="member">
+                                    <input type="radio" name="child${i}Member" value="yes" id="child${i}MemberYes">
+                                    <label for="child${i}MemberYes">Yes, Child ${i} is already a YSRC member</label>
+                                </div>
+                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="member">
+                                    <input type="radio" name="child${i}Member" value="no" id="child${i}MemberNo">
+                                    <label for="child${i}MemberNo">No, Child ${i} needs to join YSRC</label>
+                                </div>
                             </div>
                         </div>
-                        <div id="child${i}PaidSection" style="display: none; margin-top: 10px;">
-                            <h6 style="color: #666; margin-bottom: 8px;">Has Child ${i} paid the 2025/2026 season fee?</h6>
+                        <div id="child${i}PaidSection" style="display: none;">
+                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Has Child ${i} paid the 2025/2026 season fee?</h6>
                             <div class="wizard-options">
                                 <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="paid">
                                     <input type="radio" name="child${i}Paid" value="yes" id="child${i}PaidYes">
-                                    <label for="child${i}PaidYes">Yes</label>
+                                    <label for="child${i}PaidYes">Yes, Child ${i} has paid this year's fee</label>
                                 </div>
                                 <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="paid">
                                     <input type="radio" name="child${i}Paid" value="no" id="child${i}PaidNo">
-                                    <label for="child${i}PaidNo">No</label>
+                                    <label for="child${i}PaidNo">No, Child ${i} needs to pay this year's fee</label>
                                 </div>
                             </div>
                         </div>
@@ -1798,16 +1810,19 @@
             // Only include the main person if they are a YSRC member
             if (wizardData.ysrcMembers.includes('you')) {
                 html += `
-                    <div style="margin-bottom: 25px;">
-                        <h5 style="color: #2c3e50; margin-bottom: 10px;">You:</h5>
-                        <div class="wizard-options">
-                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="bowls">
-                                <input type="radio" name="youBowls" value="yes" id="youBowlsYes">
-                                <label for="youBowlsYes">Yes, I'm a bowls member</label>
-                            </div>
-                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="bowls">
-                                <input type="radio" name="youBowls" value="no" id="youBowlsNo">
-                                <label for="youBowlsNo">No, I'm not a bowls member</label>
+                    <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0494b6;">
+                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👤 You</h5>
+                        <div style="margin-bottom: 15px;">
+                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Are you also a member of the Bowls Club?</h6>
+                            <div class="wizard-options">
+                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="bowls">
+                                    <input type="radio" name="youBowls" value="yes" id="youBowlsYes">
+                                    <label for="youBowlsYes">Yes, I'm a bowls member (R100 discount)</label>
+                                </div>
+                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="bowls">
+                                    <input type="radio" name="youBowls" value="no" id="youBowlsNo">
+                                    <label for="youBowlsNo">No, I'm not a bowls member (R50 discount)</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1817,16 +1832,19 @@
             // Include partner if couple AND partner is a YSRC member
             if (wizardData.membershipType === 'couple' && wizardData.ysrcMembers.includes('partner')) {
                 html += `
-                    <div style="margin-bottom: 25px;">
-                        <h5 style="color: #2c3e50; margin-bottom: 10px;">Partner:</h5>
-                        <div class="wizard-options">
-                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="bowls">
-                                <input type="radio" name="partnerBowls" value="yes" id="partnerBowlsYes">
-                                <label for="partnerBowlsYes">Yes, my partner is a bowls member</label>
-                            </div>
-                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="bowls">
-                                <input type="radio" name="partnerBowls" value="no" id="partnerBowlsNo">
-                                <label for="partnerBowlsNo">No, my partner is not a bowls member</label>
+                    <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👥 Partner</h5>
+                        <div style="margin-bottom: 15px;">
+                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Is your partner also a member of the Bowls Club?</h6>
+                            <div class="wizard-options">
+                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="bowls">
+                                    <input type="radio" name="partnerBowls" value="yes" id="partnerBowlsYes">
+                                    <label for="partnerBowlsYes">Yes, my partner is a bowls member (R100 discount)</label>
+                                </div>
+                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="bowls">
+                                    <input type="radio" name="partnerBowls" value="no" id="partnerBowlsNo">
+                                    <label for="partnerBowlsNo">No, my partner is not a bowls member (R50 discount)</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1836,17 +1854,23 @@
             // Include children if any AND they are YSRC members
             for (let i = 1; i <= wizardData.children; i++) {
                 if (wizardData.ysrcMembers.includes(`child${i}`)) {
+                    const childColors = ['#27ae60', '#f39c12', '#9b59b6', '#e67e22']; // Different colors for each child
+                    const childColor = childColors[(i - 1) % childColors.length];
+                    
                     html += `
-                        <div style="margin-bottom: 25px;">
-                            <h5 style="color: #2c3e50; margin-bottom: 10px;">Child ${i}:</h5>
-                            <div class="wizard-options">
-                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="bowls">
-                                    <input type="radio" name="child${i}Bowls" value="yes" id="child${i}BowlsYes">
-                                    <label for="child${i}BowlsYes">Yes, Child ${i} is a bowls member</label>
-                                </div>
-                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="bowls">
-                                    <input type="radio" name="child${i}Bowls" value="no" id="child${i}BowlsNo">
-                                    <label for="child${i}BowlsNo">No, Child ${i} is not a bowls member</label>
+                        <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${childColor};">
+                            <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👶 Child ${i}</h5>
+                            <div style="margin-bottom: 15px;">
+                                <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Is Child ${i} also a member of the Bowls Club?</h6>
+                                <div class="wizard-options">
+                                    <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="bowls">
+                                        <input type="radio" name="child${i}Bowls" value="yes" id="child${i}BowlsYes">
+                                        <label for="child${i}BowlsYes">Yes, Child ${i} is a bowls member (R100 discount)</label>
+                                    </div>
+                                    <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="bowls">
+                                        <input type="radio" name="child${i}Bowls" value="no" id="child${i}BowlsNo">
+                                        <label for="child${i}BowlsNo">No, Child ${i} is not a bowls member (R50 discount)</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
