@@ -18,6 +18,7 @@
     </script>
     
     <style>
+        /* ===== RESET & BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -29,6 +30,7 @@
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
+            padding-bottom: 60px; /* Account for survey banner */
         }
 
         .container {
@@ -37,7 +39,7 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* ===== HEADER & NAVIGATION ===== */
         header {
             background: linear-gradient(135deg, #0494b6 0%, #0384a3 100%);
             color: white;
@@ -93,30 +95,6 @@
             transform: translateY(-1px);
             color: white;
             text-decoration: none;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/courts.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 0;
-            margin-bottom: 40px;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: 300;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.9;
         }
 
         /* Navigation */
@@ -184,7 +162,31 @@
             transform: rotate(45deg) translate(-5px, -6px);
         }
 
-        /* Main Content */
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/courts.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* ===== MAIN CONTENT ===== */
         main {
             padding: 40px 0;
         }
@@ -227,6 +229,7 @@
             font-size: 1.1rem;
         }
 
+        /* ===== COMPONENTS ===== */
         /* Info Cards */
         .info-grid {
             display: grid;
@@ -349,209 +352,7 @@
             text-align: center;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .header-text h1 {
-                font-size: 1.8rem;
-                text-align: center;
-            }
-
-            .logo {
-                height: 60px;
-            }
-
-            .hero {
-                padding: 60px 0;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-                margin-bottom: 15px;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            /* Mobile Navigation */
-            .nav-container {
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 0;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: white;
-                flex-direction: column;
-                gap: 0;
-                transition: left 0.3s ease;
-                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links a {
-                padding: 20px 25px;
-                border-bottom: 1px solid #eee;
-                border-radius: 0;
-                text-align: left;
-                font-size: 1.1rem;
-                min-height: 60px;
-                display: flex;
-                align-items: center;
-            }
-
-            .nav-links a:hover {
-                background-color: #f8f9fa;
-                color: #2c3e50;
-            }
-
-            .section {
-                padding: 25px 20px;
-                padding-top: 50px;
-                margin-bottom: 30px;
-            }
-
-            .section h2 {
-                font-size: 1.6rem;
-                margin-bottom: 15px;
-            }
-
-            .section h3 {
-                font-size: 1.3rem;
-                margin: 20px 0 10px 0;
-            }
-
-            .section p {
-                font-size: 1rem;
-                margin-bottom: 12px;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                margin: 20px 0;
-            }
-
-            .info-card {
-                padding: 20px;
-            }
-
-            .info-card h4 {
-                font-size: 1.2rem;
-                margin-bottom: 12px;
-            }
-
-            .rules-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                margin: 20px 0;
-            }
-
-            .rules-card {
-                padding: 20px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                margin-top: 20px;
-            }
-
-            .contact-item {
-                padding: 25px 20px;
-            }
-
-            .contact-item h4 {
-                font-size: 1.3rem;
-                margin-bottom: 15px;
-            }
-
-            .contact-item a {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-
-            table {
-                font-size: 0.9rem;
-            }
-
-            th, td {
-                padding: 8px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-
-            .footer-logo {
-                height: 50px;
-            }
-
-            .highlight {
-                padding: 20px;
-                margin: 20px 0;
-            }
-
-            .highlight h3 {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header-text h1 {
-                font-size: 1.5rem;
-            }
-
-            .hero h2 {
-                font-size: 1.5rem;
-            }
-
-            .section h2 {
-                font-size: 1.4rem;
-            }
-
-            .section h3 {
-                font-size: 1.2rem;
-            }
-
-            .nav-links a {
-                padding: 10px 12px;
-                font-size: 0.9rem;
-            }
-
-            .container {
-                padding: 0 10px;
-            }
-
-            .section {
-                padding: 20px 15px;
-                padding-top: 45px;
-            }
-        }
-
+        /* ===== SPECIAL SECTIONS ===== */
         /* Highlights */
         .highlight {
             background: linear-gradient(135deg, #0494b6, #0384a3);
@@ -598,6 +399,7 @@
             font-size: 1rem;
         }
 
+        /* Social Media */
         .social-media {
             text-align: center;
             margin-top: 20px;
@@ -629,6 +431,7 @@
             vertical-align: middle;
         }
 
+        /* WhatsApp Updates */
         .whatsapp-updates {
             text-align: center;
             margin-top: 30px;
@@ -709,7 +512,7 @@
             border: none;
         }
 
-        /* Survey Banner */
+        /* ===== SURVEY BANNER ===== */
         .survey-banner {
             position: fixed;
             bottom: 0;
@@ -782,12 +585,7 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Add bottom padding to body to account for banner */
-        body {
-            padding-bottom: 60px;
-        }
-
-        /* Membership Wizard Styles */
+        /* ===== MEMBERSHIP WIZARD ===== */
         .wizard-button {
             display: inline-block;
             background: linear-gradient(135deg, #0494b6, #0384a3);
@@ -1081,7 +879,201 @@
             font-weight: 600;
         }
 
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header-text h1 {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+
+            .logo {
+                height: 60px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            /* Mobile Navigation */
+            .nav-container {
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links a {
+                padding: 20px 25px;
+                border-bottom: 1px solid #eee;
+                border-radius: 0;
+                text-align: left;
+                font-size: 1.1rem;
+                min-height: 60px;
+                display: flex;
+                align-items: center;
+            }
+
+            .nav-links a:hover {
+                background-color: #f8f9fa;
+                color: #2c3e50;
+            }
+
+            .section {
+                padding: 25px 20px;
+                padding-top: 50px;
+                margin-bottom: 30px;
+            }
+
+            .section h2 {
+                font-size: 1.6rem;
+                margin-bottom: 15px;
+            }
+
+            .section h3 {
+                font-size: 1.3rem;
+                margin: 20px 0 10px 0;
+            }
+
+            .section p {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin: 20px 0;
+            }
+
+            .info-card {
+                padding: 20px;
+            }
+
+            .info-card h4 {
+                font-size: 1.2rem;
+                margin-bottom: 12px;
+            }
+
+            .rules-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin: 20px 0;
+            }
+
+            .rules-card {
+                padding: 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .contact-item {
+                padding: 25px 20px;
+            }
+
+            .contact-item h4 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .contact-item a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .footer-logo {
+                height: 50px;
+            }
+
+            .highlight {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            .highlight h3 {
+                font-size: 1.3rem;
+            }
+
+            /* Mobile survey banner adjustments */
+            .survey-banner {
+                padding: 10px 15px;
+            }
+
+            .survey-banner-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .survey-banner-text {
+                font-size: 0.9rem;
+            }
+
+            .survey-banner-link {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+
+            /* Adjust body padding for mobile */
+            body {
+                padding-bottom: 80px;
+            }
+
+            /* Mobile wizard adjustments */
             .wizard-modal {
                 width: 95%;
                 margin: 20px;
@@ -1115,29 +1107,37 @@
             .wizard-table td {
                 padding: 8px;
             }
+        }
 
-            /* Mobile survey banner adjustments */
-            .survey-banner {
-                padding: 10px 15px;
+        @media (max-width: 480px) {
+            .header-text h1 {
+                font-size: 1.5rem;
             }
 
-            .survey-banner-content {
-                flex-direction: column;
-                gap: 10px;
+            .hero h2 {
+                font-size: 1.5rem;
             }
 
-            .survey-banner-text {
+            .section h2 {
+                font-size: 1.4rem;
+            }
+
+            .section h3 {
+                font-size: 1.2rem;
+            }
+
+            .nav-links a {
+                padding: 10px 12px;
                 font-size: 0.9rem;
             }
 
-            .survey-banner-link {
-                padding: 6px 12px;
-                font-size: 0.85rem;
+            .container {
+                padding: 0 10px;
             }
 
-            /* Adjust body padding for mobile */
-            body {
-                padding-bottom: 80px;
+            .section {
+                padding: 20px 15px;
+                padding-top: 45px;
             }
         }
     </style>
@@ -1608,7 +1608,7 @@
                 <div class="wizard-step" id="step6">
                     <div class="wizard-question">
                         <h4>Bowls Club Membership</h4>
-                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">For YSRC members only: Are you also a member of the Bowls Club? (R100 discount if yes, R50 discount if no)</p>
+                        <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">For YSRC members only: Are you also a member of the Bowls Club?</p>
                         <div id="bowlsMembershipOptions"></div>
                     </div>
                 </div>
@@ -1636,6 +1636,8 @@
     </div>
 
     <script>
+        // ===== NAVIGATION & UI FUNCTIONALITY =====
+        
         // Hamburger menu functionality
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
@@ -1667,7 +1669,7 @@
             });
         });
 
-        // Add active class to navigation links on scroll
+        // Navigation scroll tracking
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('.section');
             const navLinks = document.querySelectorAll('.nav-links a');
@@ -1688,13 +1690,12 @@
                 }
             });
 
-            // Track when users reach the events section
+            // Track events section view
             const eventsSection = document.getElementById('events');
             if (eventsSection) {
                 const eventsTop = eventsSection.offsetTop;
                 const eventsHeight = eventsSection.clientHeight;
                 if (scrollY >= (eventsTop - 200) && scrollY <= (eventsTop + eventsHeight)) {
-                    // Only track once per session
                     if (!sessionStorage.getItem('eventsViewed')) {
                         gtag('event', 'events_section_viewed', {
                             'event_category': 'engagement',
@@ -1706,18 +1707,21 @@
             }
         });
 
-        // Membership Wizard JavaScript
+        // ===== MEMBERSHIP WIZARD =====
+        
+        // Wizard state
         let currentStep = 1;
         let wizardData = {
             membershipType: '',
             yourAge: '',
             partnerAge: '',
             children: 0,
-            ysrcMembers: [], // Array of who is already a member
-            ysrcPaid: [], // Array of who has paid current season fee
-            bowlsMembers: [] // Array of who is a bowls member
+            ysrcMembers: [],
+            ysrcPaid: [],
+            bowlsMembers: []
         };
 
+        // Wizard modal controls
         function openMembershipWizard() {
             document.getElementById('wizardOverlay').style.display = 'flex';
             resetWizard();
@@ -1750,29 +1754,47 @@
         }
 
         function selectOption(element, value) {
-            // Remove selected class from all options in this group
-            const options = element.parentElement.querySelectorAll('.wizard-option');
-            options.forEach(option => option.classList.remove('selected'));
-            
-            // Add selected class to clicked option
-            element.classList.add('selected');
-            
-            // Update wizard data based on the step
+            // Handle different step types
             const step = currentStep;
+            
             if (step === 1) {
+                // Handle membership type selection (original wizard-option style)
+                const options = element.parentElement.querySelectorAll('.wizard-option');
+                options.forEach(option => option.classList.remove('selected'));
+                element.classList.add('selected');
                 wizardData.membershipType = value;
             } else if (step === 2) {
+                // Handle age selection (original wizard-option style)
+                const options = element.parentElement.querySelectorAll('.wizard-option');
+                options.forEach(option => option.classList.remove('selected'));
+                element.classList.add('selected');
                 wizardData.yourAge = value;
             } else if (step === 3) {
+                // Handle partner age selection (original wizard-option style)
+                const options = element.parentElement.querySelectorAll('.wizard-option');
+                options.forEach(option => option.classList.remove('selected'));
+                element.classList.add('selected');
                 wizardData.partnerAge = value;
             } else if (step === 4) {
+                // Handle children selection (original wizard-option style)
+                const options = element.parentElement.querySelectorAll('.wizard-option');
+                options.forEach(option => option.classList.remove('selected'));
+                element.classList.add('selected');
                 wizardData.children = parseInt(value);
-                console.log('Set children count to:', wizardData.children, 'from value:', value);
             } else if (step === 5) {
-                // Handle YSRC membership selection
-                const person = element.getAttribute('data-person');
-                const question = element.getAttribute('data-question');
+                // Handle YSRC membership selection (new inline style)
+                const radioName = element.getAttribute('name');
                 const isYes = value === 'yes';
+                
+                // Extract person and question from radio name
+                let person, question;
+                if (radioName.includes('Member')) {
+                    person = radioName.replace('Member', '');
+                    question = 'member';
+                } else if (radioName.includes('Paid')) {
+                    person = radioName.replace('Paid', '');
+                    question = 'paid';
+                }
                 
                 if (question === 'member') {
                     if (isYes) {
@@ -1802,57 +1824,73 @@
                         wizardData.ysrcPaid = wizardData.ysrcPaid.filter(m => m !== person);
                     }
                 }
-            } else if (step === 6) {
-                // Handle bowls membership selection
-                const person = element.getAttribute('data-person');
-                const question = element.getAttribute('data-question');
-                const isYes = value === 'yes';
-                
-                if (question === 'bowls') {
-                    if (isYes) {
-                        if (!wizardData.bowlsMembers.includes(person)) {
-                            wizardData.bowlsMembers.push(person);
-                        }
-                    } else {
-                        wizardData.bowlsMembers = wizardData.bowlsMembers.filter(m => m !== person);
-                    }
-                }
             }
+        }
+
+        function toggleBowlsMembership(personId) {
+            const checkbox = document.getElementById(`bowls_${personId}`);
+            const label = checkbox.parentElement;
+            
+            if (checkbox.checked) {
+                if (!wizardData.bowlsMembers.includes(personId)) {
+                    wizardData.bowlsMembers.push(personId);
+                }
+                // Update label styling to show selected state
+                label.style.background = getPersonColor(personId);
+                label.style.color = 'white';
+            } else {
+                wizardData.bowlsMembers = wizardData.bowlsMembers.filter(m => m !== personId);
+                // Update label styling to show unselected state
+                label.style.background = '#f8f9fa';
+                label.style.color = '#2c3e50';
+            }
+        }
+
+        function getPersonColor(personId) {
+            if (personId === 'you') return '#0494b6';
+            if (personId === 'partner') return '#e74c3c';
+            const childColors = ['#27ae60', '#f39c12', '#9b59b6', '#e67e22'];
+            const childNum = parseInt(personId.replace('child', ''));
+            return childColors[(childNum - 1) % childColors.length];
         }
 
         function generateYSRCMembershipOptions() {
             const container = document.getElementById('ysrcMembershipOptions');
             let html = '';
             
-            console.log('Generating YSRC options. Children count:', wizardData.children);
-            
             // Always include the main person
             html += `
-                <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0494b6;">
+                <div style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0494b6;">
                     <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👤 You</h5>
-                    <div style="margin-bottom: 15px;">
-                        <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Are you already a YSRC member?</h6>
-                        <div class="wizard-options">
-                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="member">
-                                <input type="radio" name="youMember" value="yes" id="youMemberYes">
-                                <label for="youMemberYes">Yes, I'm already a YSRC member</label>
-                            </div>
-                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="member">
-                                <input type="radio" name="youMember" value="no" id="youMemberNo">
-                                <label for="youMemberNo">No, I need to join YSRC</label>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: white; border-radius: 6px; border: 2px solid #e9ecef;">
+                            <span style="color: #2c3e50; font-weight: 500;">Are you already a YSRC member?</span>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'yes')">
+                                    <input type="radio" name="youMember" value="yes" id="youMemberYes" style="margin: 0;">
+                                    <span>Yes</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'no')">
+                                    <input type="radio" name="youMember" value="no" id="youMemberNo" style="margin: 0;">
+                                    <span>No</span>
+                                </label>
                             </div>
                         </div>
                     </div>
-                    <div id="youPaidSection" style="display: none;">
-                        <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Have you paid the 2025/2026 season fee?</h6>
-                        <div class="wizard-options">
-                            <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="paid">
-                                <input type="radio" name="youPaid" value="yes" id="youPaidYes">
-                                <label for="youPaidYes">Yes, I've paid this year's fee</label>
-                            </div>
-                            <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="paid">
-                                <input type="radio" name="youPaid" value="no" id="youPaidNo">
-                                <label for="youPaidNo">No, I need to pay this year's fee</label>
+                    
+                    <div id="youPaidSection" style="display: none; margin-top: 12px;">
+                        <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: white; border-radius: 6px; border: 2px solid #e9ecef;">
+                            <span style="color: #2c3e50; font-weight: 500;">Have you paid the 2025/2026 season fee?</span>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'yes')">
+                                    <input type="radio" name="youPaid" value="yes" id="youPaidYes" style="margin: 0;">
+                                    <span>Yes</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'no')">
+                                    <input type="radio" name="youPaid" value="no" id="youPaidNo" style="margin: 0;">
+                                    <span>No</span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -1862,31 +1900,37 @@
             // Include partner if couple
             if (wizardData.membershipType === 'couple') {
                 html += `
-                    <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e74c3c;">
+                    <div style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e74c3c;">
                         <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👥 Partner</h5>
-                        <div style="margin-bottom: 15px;">
-                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Is your partner already a YSRC member?</h6>
-                            <div class="wizard-options">
-                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="member">
-                                    <input type="radio" name="partnerMember" value="yes" id="partnerMemberYes">
-                                    <label for="partnerMemberYes">Yes, my partner is already a YSRC member</label>
-                                </div>
-                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="member">
-                                    <input type="radio" name="partnerMember" value="no" id="partnerMemberNo">
-                                    <label for="partnerMemberNo">No, my partner needs to join YSRC</label>
+                        
+                        <div style="margin-bottom: 12px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: white; border-radius: 6px; border: 2px solid #e9ecef;">
+                                <span style="color: #2c3e50; font-weight: 500;">Is your partner already a YSRC member?</span>
+                                <div style="display: flex; gap: 15px;">
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'yes')">
+                                        <input type="radio" name="partnerMember" value="yes" id="partnerMemberYes" style="margin: 0;">
+                                        <span>Yes</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'no')">
+                                        <input type="radio" name="partnerMember" value="no" id="partnerMemberNo" style="margin: 0;">
+                                        <span>No</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                        <div id="partnerPaidSection" style="display: none;">
-                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Has your partner paid the 2025/2026 season fee?</h6>
-                            <div class="wizard-options">
-                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="paid">
-                                    <input type="radio" name="partnerPaid" value="yes" id="partnerPaidYes">
-                                    <label for="partnerPaidYes">Yes, my partner has paid this year's fee</label>
-                                </div>
-                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="paid">
-                                    <input type="radio" name="partnerPaid" value="no" id="partnerPaidNo">
-                                    <label for="partnerPaidNo">No, my partner needs to pay this year's fee</label>
+                        
+                        <div id="partnerPaidSection" style="display: none; margin-top: 12px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: white; border-radius: 6px; border: 2px solid #e9ecef;">
+                                <span style="color: #2c3e50; font-weight: 500;">Has your partner paid the 2025/2026 season fee?</span>
+                                <div style="display: flex; gap: 15px;">
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'yes')">
+                                        <input type="radio" name="partnerPaid" value="yes" id="partnerPaidYes" style="margin: 0;">
+                                        <span>Yes</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'no')">
+                                        <input type="radio" name="partnerPaid" value="no" id="partnerPaidNo" style="margin: 0;">
+                                        <span>No</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -1895,38 +1939,42 @@
             }
             
             // Include children if any
-            console.log('About to generate children HTML. Children count:', wizardData.children);
             for (let i = 1; i <= wizardData.children; i++) {
-                console.log('Generating HTML for Child', i);
-                const childColors = ['#27ae60', '#f39c12', '#9b59b6', '#e67e22']; // Different colors for each child
+                const childColors = ['#27ae60', '#f39c12', '#9b59b6', '#e67e22'];
                 const childColor = childColors[(i - 1) % childColors.length];
                 
                 html += `
-                    <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${childColor};">
+                    <div style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${childColor};">
                         <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👶 Child ${i}</h5>
-                        <div style="margin-bottom: 15px;">
-                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Is Child ${i} already a YSRC member?</h6>
-                            <div class="wizard-options">
-                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="member">
-                                    <input type="radio" name="child${i}Member" value="yes" id="child${i}MemberYes">
-                                    <label for="child${i}MemberYes">Yes, Child ${i} is already a YSRC member</label>
-                                </div>
-                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="member">
-                                    <input type="radio" name="child${i}Member" value="no" id="child${i}MemberNo">
-                                    <label for="child${i}MemberNo">No, Child ${i} needs to join YSRC</label>
+                        
+                        <div style="margin-bottom: 12px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: white; border-radius: 6px; border: 2px solid #e9ecef;">
+                                <span style="color: #2c3e50; font-weight: 500;">Is Child ${i} already a YSRC member?</span>
+                                <div style="display: flex; gap: 15px;">
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'yes')">
+                                        <input type="radio" name="child${i}Member" value="yes" id="child${i}MemberYes" style="margin: 0;">
+                                        <span>Yes</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'no')">
+                                        <input type="radio" name="child${i}Member" value="no" id="child${i}MemberNo" style="margin: 0;">
+                                        <span>No</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                        <div id="child${i}PaidSection" style="display: none;">
-                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Has Child ${i} paid the 2025/2026 season fee?</h6>
-                            <div class="wizard-options">
-                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="paid">
-                                    <input type="radio" name="child${i}Paid" value="yes" id="child${i}PaidYes">
-                                    <label for="child${i}PaidYes">Yes, Child ${i} has paid this year's fee</label>
-                                </div>
-                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="paid">
-                                    <input type="radio" name="child${i}Paid" value="no" id="child${i}PaidNo">
-                                    <label for="child${i}PaidNo">No, Child ${i} needs to pay this year's fee</label>
+                        
+                        <div id="child${i}PaidSection" style="display: none; margin-top: 12px;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: white; border-radius: 6px; border: 2px solid #e9ecef;">
+                                <span style="color: #2c3e50; font-weight: 500;">Has Child ${i} paid the 2025/2026 season fee?</span>
+                                <div style="display: flex; gap: 15px;">
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'yes')">
+                                        <input type="radio" name="child${i}Paid" value="yes" id="child${i}PaidYes" style="margin: 0;">
+                                        <span>Yes</span>
+                                    </label>
+                                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: all 0.2s ease;" onclick="selectOption(this.querySelector('input'), 'no')">
+                                        <input type="radio" name="child${i}Paid" value="no" id="child${i}PaidNo" style="margin: 0;">
+                                        <span>No</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -1934,7 +1982,6 @@
                 `;
             }
             
-            console.log('Final HTML length:', html.length);
             container.innerHTML = html;
         }
 
@@ -1942,75 +1989,64 @@
             const container = document.getElementById('bowlsMembershipOptions');
             let html = '';
             
-            // Only include the main person if they are a YSRC member
+            // Get all YSRC members
+            const ysrcMembers = [];
             if (wizardData.ysrcMembers.includes('you')) {
-                html += `
-                    <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #0494b6;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👤 You</h5>
-                        <div style="margin-bottom: 15px;">
-                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Are you also a member of the Bowls Club?</h6>
-                            <div class="wizard-options">
-                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="you" data-question="bowls">
-                                    <input type="radio" name="youBowls" value="yes" id="youBowlsYes">
-                                    <label for="youBowlsYes">Yes, I'm a bowls member (R100 discount)</label>
-                                </div>
-                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="you" data-question="bowls">
-                                    <input type="radio" name="youBowls" value="no" id="youBowlsNo">
-                                    <label for="youBowlsNo">No, I'm not a bowls member (R50 discount)</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                ysrcMembers.push({ id: 'you', name: 'You', icon: '👤', color: '#0494b6' });
             }
-            
-            // Include partner if couple AND partner is a YSRC member
             if (wizardData.membershipType === 'couple' && wizardData.ysrcMembers.includes('partner')) {
-                html += `
-                    <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #e74c3c;">
-                        <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👥 Partner</h5>
-                        <div style="margin-bottom: 15px;">
-                            <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Is your partner also a member of the Bowls Club?</h6>
-                            <div class="wizard-options">
-                                <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="partner" data-question="bowls">
-                                    <input type="radio" name="partnerBowls" value="yes" id="partnerBowlsYes">
-                                    <label for="partnerBowlsYes">Yes, my partner is a bowls member (R100 discount)</label>
-                                </div>
-                                <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="partner" data-question="bowls">
-                                    <input type="radio" name="partnerBowls" value="no" id="partnerBowlsNo">
-                                    <label for="partnerBowlsNo">No, my partner is not a bowls member (R50 discount)</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                ysrcMembers.push({ id: 'partner', name: 'Partner', icon: '👥', color: '#e74c3c' });
             }
-            
-            // Include children if any AND they are YSRC members
             for (let i = 1; i <= wizardData.children; i++) {
                 if (wizardData.ysrcMembers.includes(`child${i}`)) {
-                    const childColors = ['#27ae60', '#f39c12', '#9b59b6', '#e67e22']; // Different colors for each child
-                    const childColor = childColors[(i - 1) % childColors.length];
-                    
+                    const childColors = ['#27ae60', '#f39c12', '#9b59b6', '#e67e22'];
+                    ysrcMembers.push({ 
+                        id: `child${i}`, 
+                        name: `Child ${i}`, 
+                        icon: '👶', 
+                        color: childColors[(i - 1) % childColors.length] 
+                    });
+                }
+            }
+            
+            if (ysrcMembers.length === 0) {
+                html = `
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; text-align: center;">
+                        <p style="color: #666; margin: 0;">No YSRC members found. Please complete the previous step first.</p>
+                    </div>
+                `;
+            } else {
+                html = `
+                    <div style="padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #ff9800;">
+                        <div style="display: flex; flex-direction: column; gap: 12px;">
+                `;
+                
+                ysrcMembers.forEach((person, index) => {
+                    const isChecked = wizardData.bowlsMembers.includes(person.id);
                     html += `
-                        <div style="margin-bottom: 30px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid ${childColor};">
-                            <h5 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.1rem;">👶 Child ${i}</h5>
-                            <div style="margin-bottom: 15px;">
-                                <h6 style="color: #666; margin-bottom: 8px; font-weight: 600;">Is Child ${i} also a member of the Bowls Club?</h6>
-                                <div class="wizard-options">
-                                    <div class="wizard-option" onclick="selectOption(this, 'yes')" data-person="child${i}" data-question="bowls">
-                                        <input type="radio" name="child${i}Bowls" value="yes" id="child${i}BowlsYes">
-                                        <label for="child${i}BowlsYes">Yes, Child ${i} is a bowls member (R100 discount)</label>
-                                    </div>
-                                    <div class="wizard-option" onclick="selectOption(this, 'no')" data-person="child${i}" data-question="bowls">
-                                        <input type="radio" name="child${i}Bowls" value="no" id="child${i}BowlsNo">
-                                        <label for="child${i}BowlsNo">No, Child ${i} is not a bowls member (R50 discount)</label>
-                                    </div>
-                                </div>
+                        <div style="display: flex; align-items: center; padding: 15px; background: white; border-radius: 8px; border: 2px solid ${person.color}; transition: all 0.2s ease;">
+                            <div style="display: flex; align-items: center; gap: 12px; flex: 1;">
+                                <span style="font-size: 1.2rem;">${person.icon}</span>
+                                <span style="color: #2c3e50; font-weight: 500;">${person.name}</span>
                             </div>
+                            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; border-radius: 6px; background: ${isChecked ? person.color : '#f8f9fa'}; color: ${isChecked ? 'white' : '#2c3e50'}; font-weight: 500; transition: all 0.2s ease;" onclick="toggleBowlsMembership('${person.id}')">
+                                <input type="checkbox" id="bowls_${person.id}" ${isChecked ? 'checked' : ''} style="margin: 0; transform: scale(1.1);" onchange="toggleBowlsMembership('${person.id}')">
+                                <span>Check if bowls member</span>
+                            </label>
                         </div>
                     `;
-                }
+                });
+                
+                html += `
+                        </div>
+                        
+                        <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 6px; border-left: 4px solid #2196f3;">
+                            <p style="margin: 0; color: #1565c0; font-size: 0.9rem;">
+                                <strong>💡 Tip:</strong> Bowls membership gives you a R100 discount on your YSRC fees.
+                            </p>
+                        </div>
+                    </div>
+                `;
             }
             
             container.innerHTML = html;
@@ -2018,12 +2054,12 @@
 
 
 
+        // Wizard step navigation
         function nextStep() {
             if (currentStep === 6) {
                 calculateResults();
                 showStep('results');
             } else {
-                // Validate current step
                 if (!validateCurrentStep()) {
                     return;
                 }
@@ -2133,29 +2169,8 @@
                 return true;
             }
             if (step === 6) {
-                // Check that each YSRC member has answered the bowls membership question
-                const people = [];
-                if (wizardData.ysrcMembers.includes('you')) {
-                    people.push('you');
-                }
-                if (wizardData.membershipType === 'couple' && wizardData.ysrcMembers.includes('partner')) {
-                    people.push('partner');
-                }
-                for (let i = 1; i <= wizardData.children; i++) {
-                    if (wizardData.ysrcMembers.includes(`child${i}`)) {
-                        people.push(`child${i}`);
-                    }
-                }
-                
-                // Check if all YSRC members have answered the bowls membership question
-                for (const person of people) {
-                    const yesRadio = document.getElementById(`${person}BowlsYes`);
-                    const noRadio = document.getElementById(`${person}BowlsNo`);
-                    if (!yesRadio.checked && !noRadio.checked) {
-                        alert(`Please select bowls membership status for ${person === 'you' ? 'you' : person === 'partner' ? 'your partner' : `Child ${person.replace('child', '')}`}.`);
-                        return false;
-                    }
-                }
+                // For bowls membership, we don't need to validate since checkboxes are optional
+                // Users can choose to be bowls members or not - both are valid choices
                 return true;
             }
             
@@ -2174,6 +2189,8 @@
             });
         }
 
+        // ===== WIZARD CALCULATIONS =====
+        
         function calculateResults() {
             const results = calculateFees();
             displayResults(results);
@@ -2537,11 +2554,12 @@
             }
         });
 
-        // Survey Banner functionality
+        // ===== ANALYTICS TRACKING =====
+        
+        // Survey banner tracking
         function showSurveyBanner() {
             const banner = document.getElementById('surveyBanner');
             banner.classList.add('show');
-            // Track banner shown
             gtag('event', 'survey_banner_shown', {
                 'event_category': 'engagement',
                 'event_label': 'survey_banner'
@@ -2551,14 +2569,12 @@
         function closeSurveyBanner() {
             const banner = document.getElementById('surveyBanner');
             banner.classList.remove('show');
-            // Track banner closed
             gtag('event', 'survey_banner_closed', {
                 'event_category': 'engagement',
                 'event_label': 'survey_banner'
             });
         }
 
-        // Track survey link click
         function trackSurveyClick() {
             gtag('event', 'survey_link_clicked', {
                 'event_category': 'engagement',
@@ -2567,7 +2583,6 @@
             });
         }
 
-        // Track events iframe loaded
         function trackEventsLoaded() {
             gtag('event', 'events_iframe_loaded', {
                 'event_category': 'engagement',
@@ -2575,7 +2590,6 @@
             });
         }
 
-        // Track blog click
         function trackBlogClick() {
             gtag('event', 'blog_link_clicked', {
                 'event_category': 'navigation',
@@ -2583,13 +2597,15 @@
             });
         }
 
-        // Show survey banner after a delay
+        // ===== INITIALIZATION =====
+        
+        // Initialize survey banner
         document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(showSurveyBanner, 3000); // Show after 3 seconds
+            setTimeout(showSurveyBanner, 3000);
         });
-
-        // For testing: Force show banner (uncomment to test)
-        // setTimeout(showSurveyBanner, 1000);
     </script>
 </body>
 </html>
+
+
+
