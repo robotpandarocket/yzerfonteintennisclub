@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warning Sign - Yzerfontein Tennis Club</title>
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial Black', 'Helvetica Bold', Arial, sans-serif;
+            width: 210mm;
+            height: 297mm;
+            background: #e74c3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .warning-sign {
+            width: 200mm;
+            height: 287mm;
+            background: #e74c3c;
+            border: 5px solid white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .warning-text {
+            color: white;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.2;
+            letter-spacing: 1px;
+            font-size: 2.8rem;
+        }
+
+        .main-warning {
+            margin-bottom: 30px;
+        }
+
+        .disclaimer {
+            margin-bottom: 30px;
+        }
+
+        .admission-right {
+            margin-bottom: 0;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            
+            .warning-sign {
+                width: 200mm;
+                height: 287mm;
+                border: 3px solid white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="warning-sign">
+        <div class="warning-text main-warning">
+            All Persons Entering<br>
+            These Premises<br>
+            Do So At Their<br>
+            Own Risk
+        </div>
+        
+        <div class="warning-text disclaimer">
+            Management And Its<br>
+            Tenants Do Not Accept<br>
+            Liability / Responsibility<br>
+            For Any Loss, Damage,<br>
+            Theft Or Injury<br>
+            To Any Persons<br>
+            Or Property Whilst On<br>
+            These Premises.
+        </div>
+        
+        <div class="warning-text admission-right">
+            Right Of Admission<br>
+            Reserved.
+        </div>
+    </div>
+</body>
+</html> 

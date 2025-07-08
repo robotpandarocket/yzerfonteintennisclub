@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Information - Yzerfontein Tennis Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            width: 210mm;
+            height: 297mm;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .poster {
+            width: 200mm;
+            height: 287mm;
+            background: white;
+            border: 3px solid #e74c3c;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: #e74c3c;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Emergency Numbers Section */
+        .emergency-numbers {
+            background: #fff5f5;
+            border: 3px solid #e74c3c;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .emergency-numbers h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .primary-emergency {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .secondary-emergency {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .medical-numbers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .medical-number {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .medical-number strong {
+            color: #27ae60;
+            font-weight: 700;
+        }
+
+        .security-number {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 4px solid #f39c12;
+        }
+
+        .security-number strong {
+            color: #f39c12;
+            font-weight: 700;
+        }
+
+        /* Location Section */
+        .location-section {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .location-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .location-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1565c0;
+            line-height: 1.3;
+        }
+
+        /* Action Section */
+        .action-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        .action-section h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .action-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .action-list li {
+            padding: 8px 0;
+            font-size: 1rem;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        .action-list li:before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .action-list li.important {
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        .action-list li.important:before {
+            content: "⚠️";
+            margin-right: 8px;
+        }
+
+
+
+        /* Print styles */
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            
+            .poster {
+                width: 200mm;
+                height: 287mm;
+                border: 2px solid #e74c3c;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Header -->
+        <div class="header">
+            <h1>In Case of Emergency</h1>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Emergency Numbers -->
+            <div class="emergency-numbers">
+                <h2>Emergency Numbers</h2>
+                <div class="primary-emergency">112 or 073 970 3334 (Ambulance)</div>
+                
+                <div class="medical-numbers">
+                    <div class="medical-number">
+                        Yzerfontein Medical: <strong>083 383 8874</strong>
+                    </div>
+                    <div class="medical-number">
+                        Swartland Medical: <strong>022 487 9479</strong>
+                    </div>
+                    <div class="medical-number">
+                        Atlantic Medical Services: <strong>073 970 3334</strong>
+                    </div>
+                    <div class="medical-number">
+                        ER24: <strong>084 124</strong>
+                    </div>
+                    <div class="security-number">
+                        Armed Response: <strong>082 961 0366</strong>
+                    </div>
+                    <div class="security-number">
+                        Neighbourhood Watch: <strong>083 444 0672</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="location-section">
+                <h3>Your Location</h3>
+                <div class="location-text">
+                    Yzerfontein Tennis Courts, Dolfyn Straat, by the Community Hall
+                </div>
+            </div>
+
+            <!-- What to Do -->
+            <div class="action-section">
+                <h3>What to Do in an Emergency</h3>
+                <ul class="action-list">
+                    <li>Call the relevant emergency service above</li>
+                    <li class="important">Clearly state your location (see above)</li>
+                    <li>Describe the emergency: what happened, how many injured, their condition</li>
+                    <li class="important">Stay calm and send someone to meet emergency responders at the street entrance</li>
+                </ul>
+            </div>
+
+            <!-- First Aid -->
+            <div class="action-section">
+                <h3>If Someone is Injured</h3>
+                <ul class="action-list">
+                    <li>Unconscious but breathing: Place in recovery position</li>
+                    <li>Not breathing: Start CPR immediately</li>
+                    <li>Heavy bleeding: Apply firm pressure with cloth or clothing</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html> 
