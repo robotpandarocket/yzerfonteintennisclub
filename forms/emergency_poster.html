@@ -42,25 +42,33 @@
         .header {
             background: #e74c3c;
             color: white;
-            padding: 25px;
+            padding: 20px;
             text-align: center;
             flex-shrink: 0;
+            margin: 0;
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.95;
         }
 
         /* Main Content */
         .main-content {
             flex: 1;
-            padding: 25px;
+            padding: 18px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px;
         }
 
         /* Emergency Numbers Section */
@@ -68,7 +76,7 @@
             background: #fff5f5;
             border: 3px solid #e74c3c;
             border-radius: 8px;
-            padding: 20px;
+            padding: 16px;
             text-align: center;
         }
 
@@ -84,7 +92,7 @@
             font-size: 1.8rem;
             font-weight: 700;
             color: #e74c3c;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .secondary-emergency {
@@ -106,6 +114,7 @@
             padding: 12px;
             border-radius: 6px;
             border-left: 4px solid #27ae60;
+            font-size: 1rem;
         }
 
         .medical-number strong {
@@ -118,6 +127,7 @@
             padding: 12px;
             border-radius: 6px;
             border-left: 4px solid #f39c12;
+            font-size: 1rem;
         }
 
         .security-number strong {
@@ -130,12 +140,12 @@
             background: #e3f2fd;
             border: 2px solid #2196f3;
             border-radius: 8px;
-            padding: 20px;
+            padding: 16px;
             text-align: center;
         }
 
         .location-section h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #1565c0;
             margin-bottom: 10px;
@@ -157,10 +167,11 @@
         }
 
         .action-section h3 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .action-list {
@@ -170,8 +181,8 @@
         }
 
         .action-list li {
-            padding: 8px 0;
-            font-size: 1rem;
+            padding: 10px 0;
+            font-size: 1.3rem;
             color: #2c3e50;
             line-height: 1.4;
         }
@@ -180,7 +191,7 @@
             content: "•";
             color: #3498db;
             font-weight: bold;
-            margin-right: 8px;
+            margin-right: 10px;
         }
 
         .action-list li.important {
@@ -190,22 +201,71 @@
 
         .action-list li.important:before {
             content: "⚠️";
-            margin-right: 8px;
+            margin-right: 10px;
         }
 
+        .action-list ol {
+            margin-left: 25px;
+        }
 
+        .action-list ol li {
+            padding: 8px 0;
+        }
+
+        .action-list ul {
+            margin-left: 35px;
+            margin-top: 10px;
+        }
+
+        .action-list ul li {
+            padding: 6px 0;
+            font-size: 1.2rem;
+        }
+
+        .action-list ul li:before {
+            content: "";
+            margin-right: 0;
+        }
+
+        .warning-line {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            margin: 12px 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #ffeaea;
+            color: #e74c3c;
+            padding: 15px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
 
         /* Print styles */
         @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
             body {
                 width: 210mm;
                 height: 297mm;
+                margin: 0;
+                padding: 0;
             }
             
             .poster {
                 width: 200mm;
                 height: 287mm;
-                border: 2px solid #e74c3c;
+                border: 3px solid #e74c3c;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
             }
         }
     </style>
@@ -229,7 +289,7 @@
                         Yzerfontein Medical: <strong>083 383 8874</strong>
                     </div>
                     <div class="medical-number">
-                        Swartland Medical: <strong>022 487 9479</strong>
+                        NSRI: <strong>082 990 5974</strong>
                     </div>
                     <div class="medical-number">
                         Atlantic Medical Services: <strong>073 970 3334</strong>
@@ -248,7 +308,7 @@
 
             <!-- Location -->
             <div class="location-section">
-                <h3>Your Location</h3>
+                <h3>YOUR LOCATION</h3>
                 <div class="location-text">
                     Yzerfontein Tennis Courts, Dolfyn Straat, by the Community Hall
                 </div>
@@ -256,26 +316,25 @@
 
             <!-- What to Do -->
             <div class="action-section">
-                <h3>What to Do in an Emergency</h3>
-                <ul class="action-list">
-                    <li>Call the relevant emergency service above</li>
-                    <li class="important">Clearly state your location (see above)</li>
-                    <li>Describe the emergency: what happened, how many injured, their condition</li>
-                    <li class="important">Stay calm and send someone to meet emergency responders at the street entrance</li>
-                </ul>
-            </div>
-
-            <!-- First Aid -->
-            <div class="action-section">
-                <h3>If Someone is Injured</h3>
-                <ul class="action-list">
-                    <li>Unconscious but breathing: Place in recovery position</li>
-                    <li>Not breathing: Start CPR immediately</li>
-                    <li>Heavy bleeding: Apply firm pressure with cloth or clothing</li>
-                </ul>
+                <h3>IN AN EMERGENCY</h3>
+                <ol class="action-list">
+                    <li>Call Emergency Services immediately</li>
+                    <li>Say clearly:
+                        <ul>
+                            <li>Your location (Yzerfontein Tennis Courts, Dolfyn Straat, Yzerfontein)</li>
+                            <li>What happened</li>
+                            <li>How many people are injured and their condition</li>
+                        </ul>
+                    </li>
+                    <li>Send someone to meet responders at the street entrance</li>
+                    <li>Stay on the phone with the operator until help arrives</li>
+                </ol>
             </div>
         </div>
-
+        <!-- Footer -->
+        <div class="footer">
+            Stay calm. Call for help.
+        </div>
     </div>
 </body>
 </html> 
