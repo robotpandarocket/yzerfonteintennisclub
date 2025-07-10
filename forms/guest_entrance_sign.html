@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Entrance Sign</title>
+    <style>
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0;
+            }
+            body {
+                width: 100% !important;
+                height: 100% !important;
+                overflow: visible !important;
+                padding: 0 !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            width: 297mm;
+            height: 210mm;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sign {
+            border: 6px solid #0494b6;
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: white;
+            width: 280mm;
+            height: 190mm;
+        }
+
+        .arrow {
+            font-size: 150px;
+            color: #0494b6;
+            transform: scaleX(-1);
+            display: inline-block;
+        }
+
+        .text {
+            font-size: 130px;
+            font-weight: bold;
+            color: #0494b6;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            line-height: 0.95;
+            text-align: left;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sign">
+        <span class="arrow">⤴</span>
+        <div class="text">
+            GUEST<br>ENTRANCE
+        </div>
+    </div>
+</body>
+</html> 
