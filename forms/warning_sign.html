@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warning Sign - Yzerfontein Tennis Club</title>
+    <title>Court Rules - Yzerfontein Tennis Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @page {
             size: A4 portrait;
@@ -17,88 +18,255 @@
         }
 
         body {
-            font-family: 'Arial Black', 'Helvetica Bold', Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             width: 210mm;
             height: 297mm;
-            background: #e74c3c;
+            background: white;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0;
+            padding: 0;
         }
 
-        .warning-sign {
-            width: 200mm;
-            height: 287mm;
-            background: #e74c3c;
-            border: 5px solid white;
+        .poster {
+            width: 190mm;
+            height: 267mm;
+            background: white;
+            border: 3px solid #e74c3c;
             border-radius: 8px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            margin: 10mm;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0494b6 0%, #0384a3 100%);
+            color: white;
             padding: 20px;
+            text-align: center;
+            flex-shrink: 0;
+            margin: 0;
+        }
+
+        .header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Rules Section */
+        .rules-section {
+            background: white;
+            padding: 12px;
             text-align: center;
         }
 
-        .warning-text {
-            color: white;
-            font-weight: 900;
+        .rules-section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 16px;
+            text-align: center;
             text-transform: uppercase;
-            line-height: 1.2;
-            letter-spacing: 1px;
-            font-size: 2.8rem;
         }
 
-        .main-warning {
-            margin-bottom: 30px;
+        .rule-item {
+            background: white;
+            padding: 10px 0;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
         }
 
-        .disclaimer {
-            margin-bottom: 30px;
-        }
-
-        .admission-right {
+        .rule-item:last-child {
             margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .rule-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .rule-content {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        .rule-content strong {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        /* Warning Section */
+        .warning-section {
+            background: #ffeaea;
+            padding: 12px;
+            text-align: center;
+            margin: 12px 0;
+        }
+
+        .warning-section h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .warning-text {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #e74c3c;
+            line-height: 1.3;
+        }
+
+        /* Thank You Section */
+        .thank-you-section {
+            background: white;
+            color: #2c3e50;
+            padding: 12px;
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .thank-you-section h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .thank-you-text {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+
+        .thank-you-text strong {
+            color: #27ae60;
+            font-weight: 600;
         }
 
         /* Print styles */
         @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
             body {
                 width: 210mm;
                 height: 297mm;
+                margin: 0;
+                padding: 0;
             }
             
-            .warning-sign {
-                width: 200mm;
-                height: 287mm;
-                border: 3px solid white;
+            .poster {
+                width: 190mm;
+                height: 267mm;
+                border: 3px solid #e74c3c;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
             }
         }
     </style>
 </head>
 <body>
-    <div class="warning-sign">
-        <div class="warning-text main-warning">
-            All Persons Entering<br>
-            These Premises<br>
-            Do So At Their<br>
-            Own Risk
+    <div class="poster">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎾 Welcome to the Courts</h1>
+            <p>Let's keep them safe, clean, and ready for tennis.</p>
         </div>
-        
-        <div class="warning-text disclaimer">
-            Management And Its<br>
-            Tenants Do Not Accept<br>
-            Liability / Responsibility<br>
-            For Any Loss, Damage,<br>
-            Theft Or Injury<br>
-            To Any Persons<br>
-            Or Property Whilst On<br>
-            These Premises.
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Rules Section -->
+            <div class="rules-section">
+                <h2>Court Rules</h2>
+                
+                <div class="rule-item">
+                    <div class="rule-title">
+                        👟 Tennis Shoes Only
+                    </div>
+                    <div class="rule-content">
+                        Non-marking soles required. No takkies, boots, sandals, or any shoes that leave marks.
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-title">
+                        🏸 Tennis Only on the Court
+                    </div>
+                    <div class="rule-content">
+                        No football, cricket, hockey, or other sports allowed.
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-title">
+                        🚲🐕 No Bicycles or Animals on Court
+                    </div>
+                    <div class="rule-content">
+                        Please keep bikes, scooters, skateboards and pets off the playing surface.
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-title">
+                        👧 Children Under 12 Must Be Supervised
+                    </div>
+                    <div class="rule-content">
+                        Parents/guardians are liable for any damage caused by their children – of any age.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Warning Section -->
+            <div class="warning-section">
+                <h3>⚠️ Court Damage = Your Responsibility</h3>
+                <div class="warning-text">
+                    Anyone causing damage to the surface, nets, fences or benches will be held liable.
+                </div>
+            </div>
+
         </div>
-        
-        <div class="warning-text admission-right">
-            Right Of Admission<br>
-            Reserved.
+
+        <!-- Thank You Section -->
+        <div class="thank-you-section">
+            <h3>✅ Thank You</h3>
+            <div class="thank-you-text">
+                Thank you for respecting the space and each other.<br>
+                Let's enjoy the game – and keep our courts in <strong>great condition</strong>.
+            </div>
         </div>
     </div>
 </body>
