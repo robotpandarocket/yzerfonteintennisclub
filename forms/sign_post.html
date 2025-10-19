@@ -146,7 +146,36 @@
             font-style: italic;
             margin: 0;
         }
-        
+
+		.grid-container {
+			display: grid;
+			grid-template-columns: 1fr 1fr; /* Creates two equal-width columns */
+			gap: 20px; /* Optional: Adds space between columns */
+		}
+
+		.grid-item {
+			/* Optional: Add styling for your grid items */
+			padding: 2px;
+		}
+
+		.qr-header {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 4px;
+			margin-bottom: 3px;
+			font-size: 0.95rem;
+			color: #2c3e50;
+			font-weight: 600;
+		}
+
+		.qr-code {
+			width: 135px;
+			height: 135px;
+			margin: 0 auto;
+			display: block;
+		}
+
         @media print {
             body {
                 -webkit-print-color-adjust: exact;
@@ -181,7 +210,7 @@
                         </div>
                         <ul class="list">
                             <li>When: Saturdays, 09:30-11:30 (weather permitting - updates via WhatsApp, see website)</li>
-                            <li>Members: R30 per session (ball fee)</li>
+                            <li>Members: Free</li>
                             <li>Guests: R60 per session (includes R30 guest fee + R30 ball fee)</li>
                         </ul>
                     </div>
@@ -200,28 +229,44 @@
                         </div>
                     </div>
                     
-                    <div class="subsection">
-                        <h3 class="subsection-title">Court Fees & Bookings</h3>
-                        <div class="text-content small-margin">
-                            <strong>Member Court Use (Outside Social Tennis)</strong>
-                        </div>
-                        <ul class="list">
-                            <li>Members: Free of charge</li>
-                            <li>Guests playing with a member: R30 per guest per session</li>
-                        </ul>
-                        
-                        <div class="text-content small-margin">
-                            <strong>Court Bookings (Non-Members, Outside Social Sessions)</strong>
-                        </div>
-                        <ul class="list">
-                            <li>2 Players (2 hours): R100</li>
-                            <li>4 Players (2 hours): R200</li>
-                            <li>Refundable key deposit: R200</li>
-                        </ul>
-                        <div class="contact-info">
-                            Bookings depend on availability, with preference given to members. To book and pay, visit the Yzerfontein Sports & Recreational Centre (Cnr Buitekant & Beach Rd) or call 022 451 2819.
-                        </div>
-                    </div>
+					<div class="subsection">
+						<div class="grid-container">
+							<div class="grid-item">
+								<h3 class="subsection-title">Court Fees & Bookings</h3>
+								<div class="text-content small-margin">
+									<strong>Member Court Use (Outside Social Tennis)</strong>
+								</div>
+								<ul class="list">
+									<li>Members: Free</li>
+									<li>Guests playing with a member: R30 per guest per session</li>
+								</ul>
+
+								<div class="text-content small-margin">
+									<strong>Court Bookings (Non-Members, Outside Social Sessions)</strong>
+								</div>
+								<ul class="list">
+									<li>1 hour - R150 - Maximum 4 players per court</li>
+									<li>Refundable key deposit: R200</li>
+								</ul>
+								<div class="contact-info">
+									Bookings depend on availability and must be booked online.</div>
+								</div>
+								<div class="grid-item">
+									<div class="contact-info">
+										<div class="qr-header">
+											<i class="fab fa-whatsapp whatsapp-icon"></i>
+											<span>Scan to book online</span>
+										</div>
+										<img src="../img/qr-code_booking.png" alt="Booking QR Code" class="qr-code">
+										<div class="qr-header">
+											<i class="fab fa-whatsapp whatsapp-icon"></i>
+											<span>Or go to: www.yzerfonteintennis.co.za</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+					</div>
                     
                     <div class="subsection">
                         <h3 class="subsection-title">Court Rules</h3>
@@ -233,6 +278,7 @@
                         <ul class="list">
                             <li>Wear non-marking tennis shoes only</li>
                             <li>Use the soft broom provided to sweep away leaves, sand, or moisture before play</li>
+							<li>Please spray water on the bird droppings and brush it off to prevent the holes some bird droppings cause</li>
                             <li>Lock the gate after your session</li>
                         </ul>
                         
@@ -275,7 +321,7 @@
                         </div>
                         <ul class="list">
                             <li>Wanneer: Saterdae, 09:30-11:30 (weerafhanklik)</li>
-                            <li>Lede: R30 per sessie (bal fooi)</li>
+                            <li>Lede: Gratis</li>
                             <li>Gaste: R60 per sessie (insluitend R30 gas fooi + R30 bal fooi)</li>
                         </ul>
 
@@ -295,68 +341,85 @@
                         </div>
                     </div>
                     
-                    <div class="subsection">
-                        <h3 class="subsection-title">Baan Fooie & Besprekings</h3>
-                        <div class="text-content small-margin">
-                            <strong>Klublede (Buite Sosiale Tennis)</strong>
-                        </div>
-                        <ul class="list">
-                            <li>Lede: Gratis</li>
-                            <li>Gaste wat saam met 'n lid speel: R30 per gas per sessie</li>
-                        </ul>
-                        
-                        <div class="text-content small-margin">
-                            <strong>Baanbesprekings (Nie-Lede, Buite Sosiale Sessies)</strong>
-                        </div>
-                        <ul class="list">
-                            <li>2 Spelers (2 uur): R100</li>
-                            <li>4 Spelers (2 uur): R200</li>
-                            <li>Terugbetaalbare sleuteldeposito: R200</li>
-                        </ul>
-                        <div class="contact-info">
-                            Besprekings is onderhewig aan beskikbaarheid - lede kry voorkeur. Bespreek en betaal by die Yzerfontein Sport- en Ontspanningsentrum (H/v Buitekant- & Strandstraat) of skakel 022 451 2819.
-                        </div>
-                    </div>
-                    
-                    <div class="subsection">
-                        <h3 class="subsection-title">Baanreëls</h3>
-                        
-                        <div class="text-content small-margin">
-                            <strong>Terwyl Jy op die Baan is</strong><br>
-                            Help om die bane in goeie toestand te hou vir almal:
-                        </div>
-                        <ul class="list">
-                            <li>Dra slegs tennisskoene met nie-merkende sole</li>
-                            <li>Gebruik die sagte besem om blare, sand of vog voor spel te verwyder</li>
-                            <li>Sluit die hek ná jou sessie</li>
-                        </ul>
-                        
-                        <div class="text-content small-margin">
-                            <strong>Wat Nie Toegelaat Word Nie</strong><br>
-                            Hierdie aksies beskadig die bane en beïnvloed almal se spel:
-                        </div>
-                        <ul class="list">
-                            <li>Moenie speel as die baan nat of klam is nie (insluitend oggenddou)</li>
-                            <li>Moenie die heining gebruik om op te warm nie - gebruik die slaanmuur</li>
-                            <li>Moenie fietse, skaatsplanke of <i>scooters</i> op die baan bring nie</li>
-                            <li>Moenie skoene met penne, spykers of harde sole dra nie - net tennisskoene</li>
-                            <li>Moenie stoele, koelboksies of swaar items oor die baan sleep nie</li>
-                            <li>Moenie voertuie op die bane bestuur of parkeer nie</li>
-                        </ul>
-                        <div class="text-content no-margin">
-                            Ouers moet toesien dat kinders die reëls volg. Geen kinders onder 12 sonder toesig nie.
-                        </div>
-                    </div>
-                    
-                    <div class="subsection">
-                        <h3 class="subsection-title">Meer Inligting & Lidmaatskap</h3>
-                        <div class="text-content">
-                            Vir lidmaatskap, besprekings en hoe om betrokke te raak:
-                        </div>
-                        <div class="website">yzerfonteintennis.co.za</div>
-                    </div>
-                </div>
-            </div>
+					<div class="subsection">
+						<div class="grid-container">
+							<div class="grid-item">
+								<h3 class="subsection-title">Baan Fooie & Besprekings</h3>
+								<div class="text-content small-margin">
+									<strong>Klublede (Buite Sosiale Tennis)</strong>
+								</div>
+								<ul class="list">
+									<li>Lede: Gratis</li>
+									<li>Gaste wat saam met 'n lid speel: R30 per gas per sessie</li>
+								</ul>
+
+								<div class="text-content small-margin">
+									<strong>Baanbesprekings (Nie-Lede, Buite Sosiale Sessies)</strong>
+								</div>
+								<ul class="list">
+									<li>1 uur - R150 - Max 4 Spelers</li>
+									<li>Terugbetaalbare sleuteldeposito: R200</li>
+								</ul>
+								<div class="contact-info">
+									Besprekings is onderhewig aan beskikbaarheid en moet aanlyn gedoen word.
+								</div>
+							</div>
+							<div class="grid-item">
+								<div class="contact-info">
+
+									<div class="qr-header">
+										<i class="fab fa-whatsapp whatsapp-icon"></i>
+										<span>Skandeer in om baan aanlyn te bespreek</span>
+									</div>
+									<img src="../img/qr-code_booking.png" alt="Booking QR Code" class="qr-code">
+									<div class="qr-header">
+										<i class="fab fa-whatsapp whatsapp-icon"></i>
+										<span>www.yzerfonteintennis.co.za</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+							<div class="subsection">
+								<h3 class="subsection-title">Baanreëls</h3>
+
+								<div class="text-content small-margin">
+									<strong>Terwyl Jy op die Baan is</strong><br>
+									Help om die bane in goeie toestand te hou vir almal:
+								</div>
+								<ul class="list">
+									<li>Dra slegs tennisskoene met nie-merkende sole</li>
+									<li>Gebruik die sagte besem om blare, sand of vog voor spel te verwyder</li>
+									<li>Spuit asb. voëlmis met die waterbottels nat en borsel  dit af om die gate te voorkom wat sekere voëlmis veroorsaak</li>
+									<li>Sluit die hek ná jou sessie</li>
+								</ul>
+
+								<div class="text-content small-margin">
+									<strong>Wat Nie Toegelaat Word Nie</strong><br>
+									Hierdie aksies beskadig die bane en beïnvloed almal se spel:
+								</div>
+								<ul class="list">
+									<li>Moenie speel as die baan nat of klam is nie (insluitend oggenddou)</li>
+									<li>Moenie die heining gebruik om op te warm nie - gebruik die slaanmuur</li>
+									<li>Moenie fietse, skaatsplanke of <i>scooters</i> op die baan bring nie</li>
+									<li>Moenie skoene met penne, spykers of harde sole dra nie - net tennisskoene</li>
+									<li>Moenie stoele, koelboksies of swaar items oor die baan sleep nie</li>
+									<li>Moenie voertuie op die bane bestuur of parkeer nie</li>
+								</ul>
+								<div class="text-content no-margin">
+									Ouers moet toesien dat kinders die reëls volg. Geen kinders onder 12 sonder toesig nie.
+								</div>
+							</div>
+
+							<div class="subsection">
+								<h3 class="subsection-title">Meer Inligting & Lidmaatskap</h3>
+								<div class="text-content">
+									Vir lidmaatskap, besprekings en hoe om betrokke te raak:
+								</div>
+								<div class="website">yzerfonteintennis.co.za</div>
+							</div>
+						</div>
+					</div>
             
         </div>
     </div>
